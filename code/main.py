@@ -382,6 +382,89 @@ def save_normalized_freq(df_norm: pd.DataFrame, output_dir: Path) -> None:
         log_step("Step 6", f"Failed to save normalized frequencies: {e}", "ERROR")
 
 # -----------------------------
+# Step 7. Entropy & entropy weights
+# -----------------------------
+import math
+
+def compute_entropy_weights(df_norm: pd.DataFrame) -> pd.DataFrame:
+    """
+    Compute entropy (E_j) and entropy weights (W_j) per keyword, separately within FTII and FTOI.
+    Input:
+      - df_norm: long table with columns [bank, year, group, keyword, rel_freq, norm_freq]
+    Output:
+      - DataFrame with columns [group, keyword, entropy, weight_raw, weight_norm]
+    """
+    log_step("Step 7", "Computing entropy and entropy-weights per keyword...", "INFO")
+
+    required_cols = {"group", "keyword", "norm_freq"}
+    if df_norm.empty or not required_cols.issubset(df_norm.columns):
+        log_step("Step 7", "Normalized frequency table missing or incomplete; cannot compute entropy.", "ERROR")
+        return pd.DataFrame(columns=["group", "keyword", "entropy", "weight_raw", "weight_norm"])
+
+    results = []
+    # n is the number of bank-year rows per keyword (use consistent n across keywords)
+    # We'll compute per-keyword using its actual count of rows (safer if panel is unbalanced).
+    for (grp, kw), sub in df_norm.groupby(["group", "keyword"], sort=False):
+        values = sub["norm_freq"].astype(float).values
+        n = len(values)
+        if n <= 1:
+            # Not enough observations to compute dispersion; set max entropy → zero weight
+            entropy = 1.0
+        else:
+            s = values.sum()
+            if s <= 0:
+                # All zeros → undefined distribution → maximum entropy by convention here
+                entropy = 1.0
+            else:
+                # probabilities
+                p = values / s
+                # entropy with k = 1/ln(n); zero-prob terms contribute 0
+                k = 1.0 / math.log(n)
+                entropy_sum = 0.0
+                for pi in p:
+                    if pi > 0:
+                        entropy_sum += pi * math.log(pi)
+                entropy = -k * entropy_sum
+                # clamp numerical drift
+                entropy = max(0.0, min(1.0, entropy))
+
+        # inverse-entropy raw weight
+        w_raw = 1.0 - entropy
+        results.append({"group": grp, "keyword": kw, "entropy": entropy, "weight_raw": w_raw})
+
+    df_w = pd.DataFrame(results)
+
+    # Normalize weights within each group (FTII separately from FTOI)
+    weight_norms = []
+    for grp, gsub in df_w.groupby("group", sort=False):
+        total = gsub["weight_raw"].sum()
+        if total > 0:
+            w_norm = gsub["weight_raw"] / total
+        else:
+            # If all raw weights are zero (e.g., all-zeros keywords), assign equal weights
+            equal = 1.0 / max(len(gsub), 1)
+            w_norm = pd.Series([equal] * len(gsub), index=gsub.index)
+        tmp = gsub.copy()
+        tmp["weight_norm"] = w_norm
+        weight_norms.append(tmp)
+
+    df_weights = pd.concat(weight_norms, axis=0).reset_index(drop=True)
+    log_step("Step 7", f"Computed entropy & weights for {len(df_weights)} keyword(s)", "OK")
+    return df_weights
+
+
+def save_entropy_weights(df_weights: pd.DataFrame, output_dir: Path) -> None:
+    """
+    Save entropy and normalized weights.
+    """
+    try:
+        out_path = output_dir / "entropy_weights.csv"
+        df_weights.to_csv(out_path, index=False, encoding="utf-8")
+        log_step("Step 7", f"Entropy weights saved → {out_path}", "OK")
+    except Exception as e:
+        log_step("Step 7", f"Failed to save entropy weights: {e}", "ERROR")
+
+# -----------------------------
 # Main execution
 # -----------------------------
 if __name__ == "__main__":
@@ -408,6 +491,10 @@ if __name__ == "__main__":
     # Step 6
     df_norm = min_max_normalize(freq_long)
     save_normalized_freq(df_norm, OUTPUT_DIR)
+
+    # Step 7
+    df_weights = compute_entropy_weights(df_norm)
+    save_entropy_weights(df_weights, OUTPUT_DIR)
 
     # Optional preview
     if not freq_long.empty:
