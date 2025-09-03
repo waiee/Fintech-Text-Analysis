@@ -695,6 +695,104 @@ def save_model_summary(model, name: str, output_dir: Path):
         log_step("Step 10", f"Failed to save summary: {e}", "ERROR")
 
 # -----------------------------
+# Step 11. Diagnostics & model checks
+# -----------------------------
+import numpy as np
+from scipy.stats import chi2
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+
+def save_descriptives_and_corr(df: pd.DataFrame, output_dir: Path, cols: List[str]) -> None:
+    """
+    Save descriptive stats and correlation matrix for selected columns.
+    """
+    try:
+        subset = df[cols].astype(float)
+        desc = subset.describe().T
+        corr = subset.corr()
+
+        desc_path = output_dir / "desc_stats.csv"
+        corr_path = output_dir / "corr_matrix.csv"
+        desc.to_csv(desc_path)
+        corr.to_csv(corr_path)
+        log_step("Step 11", f"Saved descriptives → {desc_path}", "OK")
+        log_step("Step 11", f"Saved correlation matrix → {corr_path}", "OK")
+    except Exception as e:
+        log_step("Step 11", f"Failed descriptives/correlation: {e}", "ERROR")
+
+
+def compute_vif_table(df: pd.DataFrame, x_vars: List[str]) -> pd.DataFrame:
+    """
+    Compute VIF for regressors. Returns a DataFrame.
+    """
+    try:
+        X = df[x_vars].astype(float).values
+        vif = [variance_inflation_factor(X, i) for i in range(X.shape[1])]
+        out = pd.DataFrame({"variable": x_vars, "VIF": vif})
+        return out
+    except Exception as e:
+        log_step("Step 11", f"VIF failed: {e}", "ERROR")
+        return pd.DataFrame(columns=["variable", "VIF"])
+
+
+def save_vif(df: pd.DataFrame, x_vars: List[str], output_dir: Path) -> None:
+    """
+    Save VIF table to CSV.
+    """
+    vif_df = compute_vif_table(df, x_vars)
+    if not vif_df.empty:
+        path = output_dir / "vif.csv"
+        vif_df.to_csv(path, index=False)
+        log_step("Step 11", f"Saved VIF table → {path}", "OK")
+
+
+def hausman_test_fe_re(df: pd.DataFrame, y: str, x_vars: List[str]) -> tuple:
+    """
+    Hausman test comparing FE vs RE.
+    Uses unadjusted covariances for comparability.
+    Returns (stat, df, pval) or (None, None, None) on failure.
+    """
+    try:
+        from linearmodels.panel import PanelOLS, RandomEffects
+
+        # Need panel structure
+        if df["bank"].nunique() < 2 or df.groupby("bank")["year"].nunique().min() < 2:
+            log_step("Step 11", "Insufficient panel variation for Hausman test (need ≥2 banks and ≥2 years per bank).", "WARNING")
+            return (None, None, None)
+
+        d = df.set_index(["bank", "year"])
+        exog = sm.add_constant(d[x_vars])
+        yv = d[y]
+
+        fe = PanelOLS(yv, exog, entity_effects=True).fit(cov_type="unadjusted")
+        re = RandomEffects(yv, exog).fit(cov_type="unadjusted")
+
+        # Align params (drop any that are missing)
+        common = fe.params.index.intersection(re.params.index)
+        b_fe = fe.params[common].values
+        b_re = re.params[common].values
+
+        V_fe = fe.cov.loc[common, common].values
+        V_re = re.cov.loc[common, common].values
+
+        diff = b_fe - b_re
+        V_diff = V_fe - V_re
+
+        # Invert covariance difference (use pseudo-inverse for stability)
+        try:
+            Vinv = np.linalg.inv(V_diff)
+        except np.linalg.LinAlgError:
+            Vinv = np.linalg.pinv(V_diff)
+
+        stat = float(diff.T @ Vinv @ diff)
+        dfree = len(common)
+        pval = 1 - chi2.cdf(stat, dfree)
+
+        log_step("Step 11", f"Hausman test: χ²({dfree}) = {stat:.4f}, p = {pval:.4f}", "OK")
+        return (stat, dfree, pval)
+    except Exception as e:
+        log_step("Step 11", f"Hausman test failed: {e}", "ERROR")
+        return (None, None, None)
+# -----------------------------
 # Main execution
 # -----------------------------
 if __name__ == "__main__":
@@ -757,4 +855,20 @@ if __name__ == "__main__":
         # Preview one example
         if pooled:
             log_step("Preview", f"Pooled OLS coefficients:\n{pooled.params}", "INFO")
+
+    # Step 11: Diagnostics & model checks
+    if not df_analysis.empty:
+        diag_cols = ["ROA", "FTI", "FTII", "FTOI", "ROE", "Assets", "CAR"]
+        save_descriptives_and_corr(df_analysis, OUTPUT_DIR, [c for c in diag_cols if c in df_analysis.columns])
+
+        # VIFs on the chosen regressors (skip if too few rows)
+        x_vars = ["FTI", "ROE", "Assets", "CAR"]
+        if len(df_analysis) >= len(x_vars) + 3:
+            save_vif(df_analysis, x_vars, OUTPUT_DIR)
+        else:
+            log_step("Step 11", "Too few rows to compute stable VIFs; skipping.", "WARNING")
+
+        # Hausman FE vs RE (only if FE/RE are viable)
+        _ = hausman_test_fe_re(df_analysis, y="ROA", x_vars=x_vars)
+
 
