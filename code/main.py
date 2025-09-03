@@ -339,6 +339,47 @@ def save_keyword_freq_outputs(
     except Exception as e:
         log_step("Step 5", f"Failed to save keyword frequencies: {e}", "ERROR")
 
+# -----------------------------
+# Step 6. Min–max normalization
+# -----------------------------
+def min_max_normalize(freq_long: pd.DataFrame) -> pd.DataFrame:
+    """
+    Apply min–max normalization per keyword across all banks/years.
+    Input: freq_long with columns [bank, year, group, keyword, rel_freq]
+    Output: adds 'norm_freq' column (scaled to [0,1] per keyword)
+    """
+    log_step("Step 6", "Applying min–max normalization...", "INFO")
+
+    if freq_long.empty:
+        log_step("Step 6", "No keyword frequencies available to normalize.", "WARNING")
+        return freq_long.assign(norm_freq=[])
+
+    df = freq_long.copy()
+    df["norm_freq"] = 0.0
+
+    for (group, keyword), sub in df.groupby(["group", "keyword"]):
+        vals = sub["rel_freq"].values
+        min_v, max_v = vals.min(), vals.max()
+        if max_v > min_v:
+            df.loc[sub.index, "norm_freq"] = (sub["rel_freq"] - min_v) / (max_v - min_v)
+        else:
+            # If all values are the same, set to 0.0
+            df.loc[sub.index, "norm_freq"] = 0.0
+
+    log_step("Step 6", f"Normalization completed for {df['keyword'].nunique()} keywords", "OK")
+    return df
+
+
+def save_normalized_freq(df_norm: pd.DataFrame, output_dir: Path) -> None:
+    """
+    Save normalized keyword frequencies.
+    """
+    try:
+        out_path = output_dir / "keyword_freq_normalized.csv"
+        df_norm.to_csv(out_path, index=False, encoding="utf-8")
+        log_step("Step 6", f"Normalized keyword frequencies saved → {out_path}", "OK")
+    except Exception as e:
+        log_step("Step 6", f"Failed to save normalized frequencies: {e}", "ERROR")
 
 # -----------------------------
 # Main execution
@@ -363,6 +404,10 @@ if __name__ == "__main__":
     # Step 5
     freq_long, freq_wide = build_keyword_frequencies(df_clean, fintech_keywords)
     save_keyword_freq_outputs(freq_long, freq_wide, OUTPUT_DIR)
+
+    # Step 6
+    df_norm = min_max_normalize(freq_long)
+    save_normalized_freq(df_norm, OUTPUT_DIR)
 
     # Optional preview
     if not freq_long.empty:
