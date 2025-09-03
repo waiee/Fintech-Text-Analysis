@@ -238,6 +238,128 @@ def save_clean_corpus_csv(df: pd.DataFrame, output_path: Path) -> None:
     print(f"[OK] Clean corpus saved → {output_path}")
 
 # -----------------------------
+# Step 5. Keyword frequency counting
+# -----------------------------
+
+import re
+from typing import Dict, List, Tuple
+
+def _compile_patterns(keywords_by_group: Dict[str, List[str]]) -> Dict[str, Dict[str, re.Pattern]]:
+    """
+    Compile case-insensitive regex patterns for each keyword, grouped by FTII/FTOI.
+    - Uses word boundaries so 'ai' won't match inside 'chairman'.
+    - Multi-word phrases are joined with \s+ to tolerate extra spaces/newlines.
+    """
+    compiled: Dict[str, Dict[str, re.Pattern]] = {}
+    for group, words in keywords_by_group.items():
+        group_patterns: Dict[str, re.Pattern] = {}
+        for kw in words:
+            # Build a safe regex with word boundaries
+            # e.g., "qr code payment" -> r"\bqr\s+code\s+payment\b"
+            terms = [re.escape(t) for t in kw.split()]
+            pattern_str = r"\b" + r"\s+".join(terms) + r"\b"
+            group_patterns[kw] = re.compile(pattern_str, flags=re.IGNORECASE)
+        compiled[group] = group_patterns
+    return compiled
+
+
+def count_keywords_in_text(text: str, compiled: Dict[str, Dict[str, re.Pattern]]) -> Dict[Tuple[str, str], int]:
+    """
+    Count occurrences of each keyword in 'text'.
+    Returns a dict with keys (group, keyword) -> count.
+    """
+    counts: Dict[Tuple[str, str], int] = {}
+    text = text or ""
+    for group, patterns in compiled.items():
+        for kw, pat in patterns.items():
+            hits = pat.findall(text)
+            counts[(group, kw)] = len(hits)
+    return counts
+
+
+def build_keyword_frequencies(
+    df_clean: pd.DataFrame,
+    keywords_by_group: Dict[str, List[str]]
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    For each (bank, year) document:
+      - Count occurrences per keyword (absolute count)
+      - Compute normalized frequency = count / word_count
+
+    Returns:
+      - freq_long: tidy long-form table (bank, year, group, keyword, count, rel_freq)
+      - freq_wide: one row per (bank, year) with columns for each keyword's rel_freq
+                   (prefixed with group, e.g., FTII__artificial intelligence)
+    """
+    if df_clean.empty:
+        cols = ["bank", "year", "group", "keyword", "count", "rel_freq"]
+        return pd.DataFrame(columns=cols), pd.DataFrame()
+
+    compiled = _compile_patterns(keywords_by_group)
+
+    rows = []
+    for _, row in df_clean.iterrows():
+        bank = row["bank"]
+        year = int(row["year"])
+        wc = int(row.get("word_count", 0)) or 0
+        txt = row.get("clean_text", "") or ""
+
+        counts = count_keywords_in_text(txt, compiled)
+        for (group, kw), c in counts.items():
+            rel = (c / wc) if wc > 0 else 0.0
+            rows.append({
+                "bank": bank,
+                "year": year,
+                "group": group,
+                "keyword": kw,
+                "count": c,
+                "rel_freq": rel
+            })
+
+    freq_long = pd.DataFrame(rows).sort_values(["bank", "year", "group", "keyword"], kind="stable")
+
+    # Build a wide table of rel_freqs for convenience in later steps
+    if not freq_long.empty:
+        # Create column names like: FTII__artificial intelligence
+        freq_long["colname"] = freq_long.apply(
+            lambda r: f"{r['group']}__{r['keyword']}", axis=1
+        )
+        freq_wide = (
+            freq_long
+            .pivot_table(index=["bank", "year"], columns="colname", values="rel_freq", aggfunc="first")
+            .reset_index()
+        )
+        # Ensure stable column order
+        freq_wide = freq_wide.loc[:, sorted(freq_wide.columns, key=lambda c: (c != "bank" and c != "year", c))]
+    else:
+        freq_wide = pd.DataFrame()
+
+    return freq_long, freq_wide
+
+
+def save_keyword_freq_outputs(
+    freq_long: pd.DataFrame,
+    freq_wide: pd.DataFrame,
+    output_dir: Path
+) -> None:
+    """
+    Save keyword frequency results:
+      - outputs/keyword_freq_long.csv  (tidy long format)
+      - outputs/keyword_freq_wide.csv  (wide format of rel_freq only)
+    """
+    long_path = output_dir / "keyword_freq_long.csv"
+    wide_path = output_dir / "keyword_freq_wide.csv"
+
+    freq_long.to_csv(long_path, index=False, encoding="utf-8")
+    print(f"[OK] Keyword frequency (long) → {long_path}")
+
+    if not freq_wide.empty:
+        freq_wide.to_csv(wide_path, index=False, encoding="utf-8")
+        print(f"[OK] Keyword frequency (wide) → {wide_path}")
+    else:
+        print("[INFO] No keyword matches found; wide table not created.")
+
+# -----------------------------
 # Main execution
 # -----------------------------
 if __name__ == "__main__":
@@ -258,8 +380,12 @@ if __name__ == "__main__":
     df_clean = preprocess_corpus(df_corpus)
     save_clean_corpus_csv(df_clean, OUTPUT_DIR / "corpus_clean.csv")
 
-    # Small preview
-    if not df_clean.empty:
-        preview_cols = ["bank", "year", "filename", "word_count"]
-        print(df_clean[preview_cols].head())
+    # Step 5: Keyword frequency counting (absolute + normalized)
+    freq_long, freq_wide = build_keyword_frequencies(df_clean, fintech_keywords)
+    save_keyword_freq_outputs(freq_long, freq_wide, OUTPUT_DIR)
+
+    # Preview a few rows (long format)
+    if not freq_long.empty:
+        print(freq_long.head(8))
+
 
