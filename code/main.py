@@ -125,6 +125,117 @@ def get_fintech_keywords() -> dict:
     }
     return keywords
 
+# -----------------------------
+# Step 4. Text preprocessing
+# -----------------------------
+
+import re
+
+_WHITESPACE_RE = re.compile(r"\s+")
+# Keep letters/numbers and basic punctuation so phrase matching still works.
+# We’ll normalize case and collapse whitespace; we won’t strip punctuation entirely yet,
+# because some keywords are multi-word phrases and we want the text intact for regex counts.
+def normalize_text(text: str) -> str:
+    """
+    Basic normalization:
+      - Lowercase
+      - Replace hyphen line breaks
+      - Collapse whitespace
+      - Strip leading/trailing spaces
+    """
+    if not isinstance(text, str):
+        return ""
+    # fix common PDF artifacts
+    t = text.replace("-\n", "")            # join hyphenated line breaks
+    t = t.replace("\n", " ")               # unify newlines to spaces
+    t = t.lower()
+    t = _WHITESPACE_RE.sub(" ", t)
+    return t.strip()
+
+
+def preprocess_corpus(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add cleaned text and simple word count.
+    Columns added:
+      - clean_text: normalized text for keyword search
+      - word_count: total words in clean_text
+    """
+    if df.empty:
+        return df.assign(clean_text=[], word_count=[])
+
+    clean = df["raw_text"].apply(normalize_text)
+    word_counts = clean.apply(lambda s: 0 if not s else len(s.split(" ")))
+    out = df.copy()
+    out["clean_text"] = clean
+    out["word_count"] = word_counts
+    return out
+
+
+def save_clean_corpus_csv(df: pd.DataFrame, output_path: Path) -> None:
+    """
+    Save the cleaned corpus DataFrame as CSV.
+    Includes: bank, year, filename, word_count, clean_text
+    (raw_text is excluded to keep file size manageable)
+    """
+    cols = ["bank", "year", "filename", "word_count", "clean_text"]
+    df[cols].to_csv(output_path, index=False, encoding="utf-8")
+    print(f"[OK] Clean corpus saved → {output_path}")
+
+# -----------------------------
+# Step 4. Text preprocessing
+# -----------------------------
+
+import re
+
+_WHITESPACE_RE = re.compile(r"\s+")
+# Keep letters/numbers and basic punctuation so phrase matching still works.
+# We’ll normalize case and collapse whitespace; we won’t strip punctuation entirely yet,
+# because some keywords are multi-word phrases and we want the text intact for regex counts.
+def normalize_text(text: str) -> str:
+    """
+    Basic normalization:
+      - Lowercase
+      - Replace hyphen line breaks
+      - Collapse whitespace
+      - Strip leading/trailing spaces
+    """
+    if not isinstance(text, str):
+        return ""
+    # fix common PDF artifacts
+    t = text.replace("-\n", "")            # join hyphenated line breaks
+    t = t.replace("\n", " ")               # unify newlines to spaces
+    t = t.lower()
+    t = _WHITESPACE_RE.sub(" ", t)
+    return t.strip()
+
+
+def preprocess_corpus(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add cleaned text and simple word count.
+    Columns added:
+      - clean_text: normalized text for keyword search
+      - word_count: total words in clean_text
+    """
+    if df.empty:
+        return df.assign(clean_text=[], word_count=[])
+
+    clean = df["raw_text"].apply(normalize_text)
+    word_counts = clean.apply(lambda s: 0 if not s else len(s.split(" ")))
+    out = df.copy()
+    out["clean_text"] = clean
+    out["word_count"] = word_counts
+    return out
+
+
+def save_clean_corpus_csv(df: pd.DataFrame, output_path: Path) -> None:
+    """
+    Save the cleaned corpus DataFrame as CSV.
+    Includes: bank, year, filename, word_count, clean_text
+    (raw_text is excluded to keep file size manageable)
+    """
+    cols = ["bank", "year", "filename", "word_count", "clean_text"]
+    df[cols].to_csv(output_path, index=False, encoding="utf-8")
+    print(f"[OK] Clean corpus saved → {output_path}")
 
 # -----------------------------
 # Main execution
@@ -133,12 +244,22 @@ if __name__ == "__main__":
     BASE_DIR = Path(__file__).resolve().parent
     DATA_DIR, OUTPUT_DIR = setup_project(BASE_DIR)
 
-    # Step 2: Build and save corpus
+    # Step 2: Build and save raw corpus (bank, year, filename, raw_text)
     df_corpus = build_corpus(DATA_DIR)
     save_corpus_csv(df_corpus, OUTPUT_DIR / "corpus.csv")
 
     # Step 3: Load fintech keywords
     fintech_keywords = get_fintech_keywords()
-    print("✅ Keyword dictionary prepared:")
+    print("Keyword dictionary prepared:")
     for category, words in fintech_keywords.items():
         print(f"- {category}: {len(words)} keywords")
+
+    # Step 4: Preprocess text (normalized text + word counts)
+    df_clean = preprocess_corpus(df_corpus)
+    save_clean_corpus_csv(df_clean, OUTPUT_DIR / "corpus_clean.csv")
+
+    # Small preview
+    if not df_clean.empty:
+        preview_cols = ["bank", "year", "filename", "word_count"]
+        print(df_clean[preview_cols].head())
+
