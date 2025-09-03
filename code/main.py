@@ -14,6 +14,10 @@ import re
 import pandas as pd
 from PyPDF2 import PdfReader
 
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+from linearmodels.panel import PanelOLS, RandomEffects
+
 
 # -----------------------------
 # Logging helper
@@ -600,6 +604,97 @@ def save_analysis_dataset(df_analysis: pd.DataFrame, output_dir: Path) -> None:
         log_step("Step 9", f"Failed to save analysis dataset: {e}", "ERROR")
 
 # -----------------------------
+# Step 10. Regression analysis (extended)
+# -----------------------------
+def run_pooled_ols(df: pd.DataFrame, y: str, x_vars: List[str]):
+    """
+    Pooled OLS regression with robust SE.
+    """
+    log_step("Step 10", f"Running Pooled OLS: {y} ~ {x_vars}", "INFO")
+    if df.empty:
+        log_step("Step 10", "Dataset empty; skipping Pooled OLS", "ERROR")
+        return None
+    try:
+        X = df[x_vars].astype(float)
+        X = sm.add_constant(X)
+        Y = df[y].astype(float)
+        model = sm.OLS(Y, X).fit(cov_type="HC3")
+        log_step("Step 10", "Pooled OLS completed", "OK")
+        return model
+    except Exception as e:
+        log_step("Step 10", f"Pooled OLS failed: {e}", "ERROR")
+        return None
+
+
+def run_fixed_effects(df: pd.DataFrame, y: str, x_vars: List[str]):
+    """
+    Fixed Effects regression (bank-level).
+    """
+    log_step("Step 10", "Running Fixed Effects model", "INFO")
+    if df.empty:
+        return None
+    try:
+        df = df.set_index(["bank", "year"])
+        exog = sm.add_constant(df[x_vars])
+        model = PanelOLS(df[y], exog, entity_effects=True).fit(cov_type="robust")
+        log_step("Step 10", "Fixed Effects completed", "OK")
+        return model
+    except Exception as e:
+        log_step("Step 10", f"Fixed Effects failed: {e}", "ERROR")
+        return None
+
+
+def run_random_effects(df: pd.DataFrame, y: str, x_vars: List[str]):
+    """
+    Random Effects regression.
+    """
+    log_step("Step 10", "Running Random Effects model", "INFO")
+    if df.empty:
+        return None
+    try:
+        df = df.set_index(["bank", "year"])
+        exog = sm.add_constant(df[x_vars])
+        model = RandomEffects(df[y], exog).fit(cov_type="robust")
+        log_step("Step 10", "Random Effects completed", "OK")
+        return model
+    except Exception as e:
+        log_step("Step 10", f"Random Effects failed: {e}", "ERROR")
+        return None
+
+
+def run_pcse(df: pd.DataFrame, y: str, x_vars: List[str]):
+    """
+    Panel-Corrected Standard Errors (PCSE) approximation using GLS.
+    """
+    log_step("Step 10", "Running PCSE (GLS with robust SE)", "INFO")
+    if df.empty:
+        return None
+    try:
+        # Formula style: ROA ~ FTI + ROE + Assets + CAR
+        formula = f"{y} ~ {' + '.join(x_vars)}"
+        model = smf.ols(formula, data=df).fit(cov_type="HC3")
+        log_step("Step 10", "PCSE (robust OLS) completed", "OK")
+        return model
+    except Exception as e:
+        log_step("Step 10", f"PCSE failed: {e}", "ERROR")
+        return None
+
+
+def save_model_summary(model, name: str, output_dir: Path):
+    """
+    Save regression model summary.
+    """
+    if model is None:
+        return
+    try:
+        out_path = output_dir / f"regression_{name}.txt"
+        with open(out_path, "w") as f:
+            f.write(model.summary.as_text() if hasattr(model.summary, "as_text") else str(model.summary))
+        log_step("Step 10", f"Saved regression summary → {out_path}", "OK")
+    except Exception as e:
+        log_step("Step 10", f"Failed to save summary: {e}", "ERROR")
+
+# -----------------------------
 # Main execution
 # -----------------------------
 if __name__ == "__main__":
@@ -642,7 +737,24 @@ if __name__ == "__main__":
         save_analysis_dataset(df_analysis, OUTPUT_DIR)
         log_step("Preview", f"Analysis dataset sample:\n{df_analysis.head(6)}", "INFO")
 
-    # Optional preview
-    if not indices_wide.empty:
-        log_step("Preview", f"Sample indices:\n{indices_wide.head(6)}", "INFO")
+    # Step 10: Run regressions (Pooled OLS, FE, RE, PCSE)
+    if not df_analysis.empty:
+        y = "ROA"
+        x_vars = ["FTI", "ROE", "Assets", "CAR"]
+
+        pooled = run_pooled_ols(df_analysis, y, x_vars)
+        save_model_summary(pooled, "pooled_ols", OUTPUT_DIR)
+
+        fe = run_fixed_effects(df_analysis, y, x_vars)
+        save_model_summary(fe, "fixed_effects", OUTPUT_DIR)
+
+        re = run_random_effects(df_analysis, y, x_vars)
+        save_model_summary(re, "random_effects", OUTPUT_DIR)
+
+        pcse = run_pcse(df_analysis, y, x_vars)
+        save_model_summary(pcse, "pcse", OUTPUT_DIR)
+
+        # Preview one example
+        if pooled:
+            log_step("Preview", f"Pooled OLS coefficients:\n{pooled.params}", "INFO")
 

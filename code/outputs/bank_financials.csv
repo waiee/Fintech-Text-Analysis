@@ -1,0 +1,5 @@
+bank,year,ROA,ROE,Assets,YearsInBusiness,BookValue,CAR,EarningsAbility,LiquidityRatio,Growth,Inflation,Islamic,StateOwned
+Maybank,2023,0.012,0.085,23.45,63,11.5,0.15,0.020,1.50,0.035,0.020,0,1
+Maybank,2024,0.0125,0.087,23.70,64,11.8,0.15,0.021,1.52,0.040,0.023,0,1
+CIMB,2023,0.010,0.078,22.70,50,9.8,0.13,0.018,1.40,0.035,0.020,0,1
+CIMB,2024,0.0108,0.080,22.95,51,10.0,0.13,0.019,1.42,0.040,0.023,0,1
