@@ -465,6 +465,94 @@ def save_entropy_weights(df_weights: pd.DataFrame, output_dir: Path) -> None:
         log_step("Step 7", f"Failed to save entropy weights: {e}", "ERROR")
 
 # -----------------------------
+# Step 8. Build FTII, FTOI, FTI indices per bank–year
+# -----------------------------
+def build_fintech_indices(
+    df_norm: pd.DataFrame,
+    df_weights: pd.DataFrame
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Merge normalized frequencies with entropy weights and compute:
+      - FTII (input index)  = sum_j (W_j * Y_ijt) for group=FTII
+      - FTOI (output index) = sum_j (W_j * Y_ijt) for group=FTOI
+      - FTI  (overall)      = FTII + FTOI
+
+    Returns:
+      - indices_long: (bank, year, group, index_value) for FTII and FTOI
+      - indices_wide: one row per (bank, year) with columns FTII, FTOI, FTI
+    """
+    log_step("Step 8", "Building FTII, FTOI, and FTI indices...", "INFO")
+
+    # Guard rails
+    need_cols_norm = {"bank", "year", "group", "keyword", "norm_freq"}
+    need_cols_w = {"group", "keyword", "weight_norm"}
+    if df_norm.empty or df_weights.empty or not need_cols_norm.issubset(df_norm.columns) or not need_cols_w.issubset(df_weights.columns):
+        log_step("Step 8", "Missing inputs for index construction (normalized freqs or weights).", "ERROR")
+        return pd.DataFrame(columns=["bank", "year", "group", "index_value"]), pd.DataFrame()
+
+    # Merge normalized frequencies with weights
+    merged = df_norm.merge(
+        df_weights[["group", "keyword", "weight_norm"]],
+        on=["group", "keyword"],
+        how="left"
+    )
+
+    # If some keywords have no weight (shouldn't happen), treat as zero
+    merged["weight_norm"] = merged["weight_norm"].fillna(0.0)
+
+    # Contribution per keyword
+    merged["contrib"] = merged["norm_freq"].astype(float) * merged["weight_norm"].astype(float)
+
+    # Aggregate to get per-(bank,year,group) index
+    indices_long = (
+        merged.groupby(["bank", "year", "group"], as_index=False)["contrib"].sum()
+        .rename(columns={"contrib": "index_value"})
+    )
+
+    # Pivot to wide: FTII, FTOI columns
+    if not indices_long.empty:
+        indices_wide = (
+            indices_long
+            .pivot_table(index=["bank", "year"], columns="group", values="index_value", aggfunc="first")
+            .reset_index()
+        )
+        # Ensure columns exist even if group absent
+        for col in ["FTII", "FTOI"]:
+            if col not in indices_wide.columns:
+                indices_wide[col] = 0.0
+
+        # Overall index
+        indices_wide["FTI"] = indices_wide["FTII"].astype(float) + indices_wide["FTOI"].astype(float)
+
+        # Sort columns nicely
+        indices_wide = indices_wide.loc[:, ["bank", "year", "FTII", "FTOI", "FTI"]]
+        log_step("Step 8", f"Built indices for {indices_wide.shape[0]} bank-year record(s)", "OK")
+    else:
+        indices_wide = pd.DataFrame(columns=["bank", "year", "FTII", "FTOI", "FTI"])
+        log_step("Step 8", "No indices computed (empty input).", "WARNING")
+
+    return indices_long, indices_wide
+
+
+def save_fintech_indices(indices_long: pd.DataFrame, indices_wide: pd.DataFrame, output_dir: Path) -> None:
+    """
+    Save indices to CSV:
+      - outputs/fintech_indices_long.csv   (bank, year, group, index_value)
+      - outputs/fintech_indices_wide.csv   (bank, year, FTII, FTOI, FTI)
+    """
+    try:
+        long_path = output_dir / "fintech_indices_long.csv"
+        wide_path = output_dir / "fintech_indices_wide.csv"
+
+        indices_long.to_csv(long_path, index=False, encoding="utf-8")
+        log_step("Step 8", f"Fintech indices (long) saved → {long_path}", "OK")
+
+        indices_wide.to_csv(wide_path, index=False, encoding="utf-8")
+        log_step("Step 8", f"Fintech indices (wide) saved → {wide_path}", "OK")
+    except Exception as e:
+        log_step("Step 8", f"Failed to save indices: {e}", "ERROR")
+
+# -----------------------------
 # Main execution
 # -----------------------------
 if __name__ == "__main__":
@@ -496,6 +584,11 @@ if __name__ == "__main__":
     df_weights = compute_entropy_weights(df_norm)
     save_entropy_weights(df_weights, OUTPUT_DIR)
 
+    # Step 8
+    indices_long, indices_wide = build_fintech_indices(df_norm, df_weights)
+    save_fintech_indices(indices_long, indices_wide, OUTPUT_DIR)
+
     # Optional preview
-    if not freq_long.empty:
-        log_step("Preview", f"First few keyword counts:\n{freq_long.head(8)}", "INFO")
+    if not indices_wide.empty:
+        log_step("Preview", f"Sample indices:\n{indices_wide.head(6)}", "INFO")
+
