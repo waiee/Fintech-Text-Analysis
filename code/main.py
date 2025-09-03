@@ -553,6 +553,53 @@ def save_fintech_indices(indices_long: pd.DataFrame, indices_wide: pd.DataFrame,
         log_step("Step 8", f"Failed to save indices: {e}", "ERROR")
 
 # -----------------------------
+# Step 9. Assemble analysis dataset
+# -----------------------------
+def assemble_analysis_dataset(
+    indices_wide: pd.DataFrame,
+    financials_path: Path
+) -> pd.DataFrame:
+    """
+    Merge fintech indices with financial/control variables (e.g., ROA, ROE, assets).
+    financials_path: path to a CSV containing bank-year financial data.
+                     Expected columns: bank, year, ROA, ROE, Assets, CAR, etc.
+    """
+    log_step("Step 9", "Assembling analysis dataset...", "INFO")
+
+    if indices_wide.empty:
+        log_step("Step 9", "No indices available; skipping merge.", "ERROR")
+        return pd.DataFrame()
+
+    if not financials_path.exists():
+        log_step("Step 9", f"Financials file not found: {financials_path}", "ERROR")
+        return pd.DataFrame()
+
+    try:
+        df_fin = pd.read_csv(financials_path)
+        log_step("Step 9", f"Loaded financial data with {len(df_fin)} rows", "OK")
+
+        # Merge on bank + year
+        merged = indices_wide.merge(df_fin, on=["bank", "year"], how="inner")
+
+        log_step("Step 9", f"Merged dataset has {len(merged)} rows", "OK")
+        return merged
+    except Exception as e:
+        log_step("Step 9", f"Failed to assemble dataset: {e}", "ERROR")
+        return pd.DataFrame()
+
+
+def save_analysis_dataset(df_analysis: pd.DataFrame, output_dir: Path) -> None:
+    """
+    Save final analysis dataset to CSV.
+    """
+    try:
+        out_path = output_dir / "analysis_dataset.csv"
+        df_analysis.to_csv(out_path, index=False, encoding="utf-8")
+        log_step("Step 9", f"Analysis dataset saved → {out_path}", "OK")
+    except Exception as e:
+        log_step("Step 9", f"Failed to save analysis dataset: {e}", "ERROR")
+
+# -----------------------------
 # Main execution
 # -----------------------------
 if __name__ == "__main__":
@@ -587,6 +634,13 @@ if __name__ == "__main__":
     # Step 8
     indices_long, indices_wide = build_fintech_indices(df_norm, df_weights)
     save_fintech_indices(indices_long, indices_wide, OUTPUT_DIR)
+
+        # Step 9
+    financials_path = OUTPUT_DIR / "bank_financials.csv"  # <-- you provide this CSV
+    df_analysis = assemble_analysis_dataset(indices_wide, financials_path)
+    if not df_analysis.empty:
+        save_analysis_dataset(df_analysis, OUTPUT_DIR)
+        log_step("Preview", f"Analysis dataset sample:\n{df_analysis.head(6)}", "INFO")
 
     # Optional preview
     if not indices_wide.empty:
