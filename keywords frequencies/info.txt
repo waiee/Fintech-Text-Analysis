@@ -1,0 +1,46 @@
+=========================================
+Explanation of CSV Output Columns
+=========================================
+
+1. keyword_freq_long.csv
+-------------------------
+This file is in "long format," meaning each row represents one bank-year-keyword.
+
+Columns:
+- bank        → Name of the bank (from PDF filename, e.g., CIMB).
+- year        → Year of the report (from PDF filename, e.g., 2019).
+- group       → Category of keyword:
+                  • FTII = FinTech Input Index (technology terms such as AI, blockchain, big data).
+                  • FTOI = FinTech Output Index (innovation terms such as mobile banking, online payment).
+- keyword     → The actual keyword/phrase being counted (e.g., "ai", "mobile banking").
+- count       → How many times this keyword appears in the document.
+- rel_freq    → Relative frequency = count ÷ total words in the document. 
+                This normalizes results so longer documents don’t dominate.
+- colname     → Combined identifier used for pivoting (e.g., "FTII__ai"). 
+                Useful when transforming into wide format.
+
+-------------------------
+2. keyword_freq_wide.csv
+-------------------------
+This file is in "wide format," meaning each row represents one bank-year, 
+with columns for all keywords.
+
+Columns:
+- bank        → Name of the bank.
+- year        → Year of the report.
+- FTII__...   → Relative frequency for each FTII keyword.
+                Example: FTII__ai = relative frequency of "ai".
+- FTOI__...   → Relative frequency for each FTOI keyword.
+                Example: FTOI__mobile banking = relative frequency of "mobile banking".
+
+Notes:
+- All keyword columns contain relative frequencies (values are usually very small, e.g., 0.00005). 
+- Small values are expected, because annual reports often have tens of thousands of words.
+- Long format is better for detailed keyword analysis.
+- Wide format is better for building indices or dashboards.
+
+=========================================
+In summary:
+- Use keyword_freq_long.csv for detailed analysis per keyword.
+- Use keyword_freq_wide.csv when you need a compact table with one row per bank-year.
+=========================================

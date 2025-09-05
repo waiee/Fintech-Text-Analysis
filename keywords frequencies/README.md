@@ -61,7 +61,7 @@ Results are saved into the `outputs/` folder:
 -----------------------------------------
 From the terminal, run:
 
-    python main_keywords_only.py
+    python kf_calculation.py
 
 Make sure your PDFs are already placed in the `data/` folder.
 
