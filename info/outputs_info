@@ -1,0 +1,113 @@
+OUTPUT FOLDER GUIDE — Fintech Text Analysis Project
+
+This folder contains all intermediate and final results.  
+Below is an explanation of each file.
+
+------------------------------------------------------------
+1. corpus.csv
+- Raw extracted text from all PDFs.
+- Columns: bank, year, filename, raw_text.
+- Purpose: archive of text extraction step.
+- Not usually needed for analysis.
+
+2. corpus_clean.csv
+- Cleaned version of corpus.csv.
+- Columns: bank, year, filename, word_count, clean_text.
+- Purpose: normalized text used for keyword search.
+- Not usually needed unless debugging text cleaning.
+
+------------------------------------------------------------
+3. keyword_freq_long.csv
+- Long-format keyword frequencies.
+- Columns: bank, year, group (FTII/FTOI), keyword, count, rel_freq.
+- Purpose: shows how often each keyword appears per bank-year.
+- Useful for detailed inspection.
+
+4. keyword_freq_wide.csv
+- Wide-format keyword frequencies.
+- Columns: bank, year, FTII__keyword, FTOI__keyword (relative frequencies).
+- Purpose: machine-friendly table for later normalization.
+
+5. keyword_freq_normalized.csv
+- Min–max normalized keyword frequencies.
+- Columns: same as keyword_freq_long, plus norm_freq.
+- Purpose: puts all keywords on [0,1] scale before weighting.
+
+------------------------------------------------------------
+6. entropy_weights.csv
+- Entropy weights per keyword.
+- Columns: group, keyword, entropy, weight_raw, weight_norm.
+- Purpose: shows how much weight each keyword contributes to indices.
+
+------------------------------------------------------------
+7. fintech_indices_long.csv
+- Long-format fintech indices.
+- Columns: bank, year, group (FTII/FTOI), index_value.
+- Purpose: tidy format for plotting trends by group.
+
+8. fintech_indices_wide.csv
+- Wide-format fintech indices.
+- Columns: bank, year, FTII, FTOI, FTI.
+- Purpose: main output of text-mining.
+- This is the file you use for analysis.
+
+------------------------------------------------------------
+9. bank_financials.csv
+- Manually provided financial data.
+- Columns: bank, year, ROA, ROE, Assets, CAR, and other controls.
+- Purpose: external ground-truth data for regression.
+- Must be updated whenever new PDFs are added.
+
+10. analysis_dataset.csv
+- Merged dataset (indices + financials).
+- Columns: bank, year, FTII, FTOI, FTI, ROA, ROE, Assets, CAR, etc.
+- Purpose: final dataset for regression.
+- This is the most important input for econometric analysis.
+
+------------------------------------------------------------
+11. regression_pooled_ols.txt
+- Regression results using pooled OLS.
+- Contains coefficients, standard errors, t-stats, p-values.
+- Purpose: baseline regression ignoring bank effects.
+
+12. regression_fixed_effects.txt
+- Regression results using Fixed Effects (if model runs).
+- Controls for bank-specific factors.
+- Purpose: within-bank variation analysis.
+
+13. regression_random_effects.txt
+- Regression results using Random Effects.
+- Purpose: efficient model if RE assumptions hold.
+
+14. regression_pcse.txt
+- Regression results using robust OLS (PCSE style).
+- Purpose: accounts for heteroskedasticity and correlation.
+
+------------------------------------------------------------
+15. desc_stats.csv
+- Descriptive statistics for variables.
+- Mean, std, min, max, quartiles.
+- Purpose: overview of dataset distribution.
+
+16. corr_matrix.csv
+- Correlation matrix for variables.
+- Purpose: check relationships and collinearity.
+
+17. vif.csv
+- Variance Inflation Factor for regressors.
+- Purpose: detect multicollinearity.
+- Only generated if dataset has enough rows.
+
+------------------------------------------------------------
+SUMMARY — WHICH FILES MATTER MOST
+
+For interpretation and reporting:
+- fintech_indices_wide.csv  (indices per bank-year)
+- analysis_dataset.csv      (merged dataset: indices + financials)
+- regression_*.txt          (regression results)
+- desc_stats.csv, corr_matrix.csv (diagnostics)
+
+The other files (corpus, keyword frequencies, entropy weights) are
+intermediate and mainly useful for debugging or auditing the process.
+
+END OF FILE

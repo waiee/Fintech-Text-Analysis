@@ -218,7 +218,6 @@ def save_clean_corpus_csv(df: pd.DataFrame, output_path: Path) -> None:
     except Exception as e:
         log_step("Step 4", f"Failed to save clean corpus: {e}", "ERROR")
 
-
 # -----------------------------
 # Step 5. Keyword frequency counting
 # -----------------------------
