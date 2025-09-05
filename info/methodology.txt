@@ -1,0 +1,115 @@
+PROJECT: The Impact of Fintech Innovation on Bank Performance
+Step-by-step explanation of methodology
+
+------------------------------------------------------------
+STEP 1 — Data Collection
+Purpose:
+- Gather annual reports of banks and financial performance data.
+How do we do it:
+- Download annual reports (PDFs) from banks’ websites or regulators.
+- Collect bank-level financial data (ROA, ROE, Assets, CAR, etc.) from reports or databases.
+
+------------------------------------------------------------
+STEP 2 — Text Extraction
+Purpose:
+- Convert annual reports (PDFs) into machine-readable text.
+How do we do it:
+- Use a PDF parser (e.g., PyPDF2) to extract text content.
+- Save the extracted text along with bank and year identifiers.
+
+------------------------------------------------------------
+STEP 3 — Keyword Dictionary
+Purpose:
+- Define what “Fintech” terms we want to measure in the text.
+How do we do it:
+- Build two dictionaries:
+  FTII = Fintech Input Index (tech terms: AI, blockchain, cloud, big data, etc.)
+  FTOI = Fintech Output Index (innovation terms: online banking, digital wallet, mobile payment, etc.)
+- These terms represent the presence of fintech-related content in the reports.
+
+------------------------------------------------------------
+STEP 4 — Text Preprocessing
+Purpose:
+- Clean the text so keyword search is accurate.
+How do we do it:
+- Lowercase all text.
+- Remove line breaks, hyphenated word splits, and extra spaces.
+- Add a word count for each document (used for normalization).
+
+------------------------------------------------------------
+STEP 5 — Keyword Frequency Calculation
+Purpose:
+- Count how often fintech terms appear in each report.
+How do we do it:
+- Search for each keyword/phrase in the cleaned text.
+- Record:
+  count = how many times it appears.
+  rel_freq = count divided by total word count (to adjust for report length).
+- Save frequencies in long and wide formats.
+
+------------------------------------------------------------
+STEP 6 — Min–Max Normalization
+Purpose:
+- Put all keyword frequencies on a common scale.
+How do we do it:
+- For each keyword, scale its rel_freq across all documents to [0, 1].
+- Formula: (value - min) / (max - min).
+- Ensures that common and rare terms are comparable.
+
+------------------------------------------------------------
+STEP 7 — Entropy Weighting
+Purpose:
+- Give more weight to keywords that carry more information.
+How do we do it:
+- Compute entropy for each keyword (measures how evenly it is distributed across banks/years).
+- If a term appears everywhere, entropy is high → low weight.
+- If a term appears unevenly, entropy is low → high weight.
+- Normalize weights so they sum to 1 within each group (FTII, FTOI).
+
+------------------------------------------------------------
+STEP 8 — Index Construction (FTII, FTOI, FTI)
+Purpose:
+- Build composite indices that summarize fintech intensity.
+How do we do it:
+- For each bank-year:
+  FTII = weighted sum of normalized input keywords.
+  FTOI = weighted sum of normalized output keywords.
+  FTI  = FTII + FTOI (overall fintech index).
+- Save results as both long and wide tables.
+
+------------------------------------------------------------
+STEP 9 — Assemble Analysis Dataset
+Purpose:
+- Combine fintech indices with financial performance data.
+How do we do it:
+- Load bank financials (ROA, ROE, Assets, CAR, etc.).
+- Merge with FTII/FTOI/FTI by bank and year.
+- Create one analysis-ready dataset for regression.
+
+------------------------------------------------------------
+STEP 10 — Regression Analysis
+Purpose:
+- Test the impact of fintech indices on bank performance.
+How do we do it:
+- Dependent variable: ROA.
+- Independent variables: FTII, FTOI, or FTI.
+- Controls: ROE, Assets, CAR, etc.
+- Estimate different models:
+  • Pooled OLS
+  • Fixed Effects (FE)
+  • Random Effects (RE)
+  • PCSE (Panel-Corrected Standard Errors)
+
+------------------------------------------------------------
+STEP 11 — Diagnostics & Robustness
+Purpose:
+- Validate the models and check assumptions.
+How do we do it:
+- Compute descriptive statistics and correlations.
+- Check multicollinearity (VIF).
+- Perform Hausman test to choose between FE and RE.
+- Compare results under different weighting schemes (equal weights vs entropy).
+
+------------------------------------------------------------
+
+END OF FILE
