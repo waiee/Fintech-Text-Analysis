@@ -1,0 +1,190 @@
+PROJECT: Fintech Text Analysis — Function & Concept Guide (Steps 1–11)
+
+1) log_step(step, message, status="INFO")
+- Prints a formatted log message for each step.
+- Concept: centralized logging for easier debugging.
+
+------------------------------------------------------------
+
+STEP 1 — PROJECT SETUP
+
+2) setup_project(base_dir)
+- Creates/ensures the "data/" and "outputs/" folders exist.
+- Concept: sets up consistent I/O paths for the project.
+
+------------------------------------------------------------
+
+STEP 2 — PDF TO TEXT
+
+3) extract_text_from_pdf(pdf_path)
+- Reads all pages of a PDF and extracts text.
+- Concept: prepares raw textual data for analysis.
+
+4) build_corpus(data_dir)
+- Iterates over PDFs, extracts bank name and year from filename, extracts text.
+- Returns DataFrame: bank, year, filename, raw_text.
+- Concept: builds a panel dataset of text by bank and year.
+
+5) save_corpus_csv(df, output_path)
+- Saves corpus DataFrame to CSV.
+- Concept: persist raw extracted text for reproducibility.
+
+------------------------------------------------------------
+
+STEP 3 — KEYWORD DICTIONARY
+
+6) get_fintech_keywords()
+- Returns dictionary with FTII (tech/input terms) and FTOI (innovation/output terms).
+- Concept: dictionary-based feature extraction.
+
+------------------------------------------------------------
+
+STEP 4 — TEXT PREPROCESSING
+
+7) normalize_text(text)
+- Lowercases, fixes hyphen line breaks, removes newlines, collapses spaces.
+- Concept: normalization avoids mismatches during keyword search.
+
+8) preprocess_corpus(df)
+- Applies normalization, adds clean_text and word_count.
+- Concept: word_count allows normalization of keyword frequency.
+
+9) save_clean_corpus_csv(df, output_path)
+- Saves cleaned text corpus with fewer columns.
+- Concept: optimized for keyword search and storage.
+
+------------------------------------------------------------
+
+STEP 5 — KEYWORD FREQUENCIES
+
+10) _compile_patterns(keywords_by_group)
+- Compiles regex for keywords with word boundaries and case insensitivity.
+- Concept: accurate phrase detection.
+
+11) count_keywords_in_text(text, compiled)
+- Counts occurrences of each keyword.
+- Concept: rule-based keyword frequency.
+
+12) build_keyword_frequencies(df_clean, keywords_by_group)
+- Computes absolute count and relative frequency (count / word_count).
+- Returns long table and wide table.
+- Concept: relative frequency makes documents comparable.
+
+13) save_keyword_freq_outputs(freq_long, freq_wide, output_dir)
+- Saves frequency results to CSV.
+
+------------------------------------------------------------
+
+STEP 6 — MIN–MAX NORMALIZATION
+
+14) min_max_normalize(freq_long)
+- Rescales each keyword’s frequency to [0,1] across all documents.
+- Concept: puts all keywords on same scale before weighting.
+
+15) save_normalized_freq(df_norm, output_dir)
+- Saves normalized frequency table.
+
+------------------------------------------------------------
+
+STEP 7 — ENTROPY WEIGHTING
+
+16) compute_entropy_weights(df_norm)
+- Computes entropy per keyword: lower entropy = more informative.
+- Raw weight = 1 − entropy. Normalized within group.
+- Concept: data-driven weighting of keywords.
+
+17) save_entropy_weights(df_weights, output_dir)
+- Saves entropy weights to CSV.
+
+------------------------------------------------------------
+
+STEP 8 — INDEX CONSTRUCTION
+
+18) build_fintech_indices(df_norm, df_weights)
+- FTII = weighted sum of input keywords.
+- FTOI = weighted sum of output keywords.
+- FTI = FTII + FTOI.
+- Concept: composite index creation from weighted keyword scores.
+
+19) save_fintech_indices(indices_long, indices_wide, output_dir)
+- Saves index tables.
+
+------------------------------------------------------------
+
+STEP 9 — ANALYSIS DATASET
+
+20) assemble_analysis_dataset(indices_wide, financials_path)
+- Merges indices with bank financial variables (ROA, ROE, Assets, CAR, etc.).
+- Concept: links text-based indices with actual financial performance.
+
+21) save_analysis_dataset(df_analysis, output_dir)
+- Saves merged dataset for regression.
+
+------------------------------------------------------------
+
+STEP 10 — REGRESSION ANALYSIS
+
+22) run_pooled_ols(df, y, x_vars)
+- Runs OLS regression with robust standard errors.
+- Concept: baseline model ignoring bank-specific effects.
+
+23) run_fixed_effects(df, y, x_vars)
+- Runs Fixed Effects panel model with bank dummies.
+- Concept: controls for time-invariant bank heterogeneity.
+
+24) run_random_effects(df, y, x_vars)
+- Runs Random Effects panel model.
+- Concept: efficient if RE assumptions hold.
+
+25) run_pcse(df, y, x_vars)
+- Runs OLS with robust SE (PCSE approximation).
+- Concept: accounts for heteroskedasticity and correlation.
+
+26) save_model_summary(model, name, output_dir)
+- Saves regression results summary.
+
+------------------------------------------------------------
+
+STEP 11 — DIAGNOSTICS
+
+27) save_descriptives_and_corr(df, output_dir, cols)
+- Saves descriptive statistics and correlation matrix.
+- Concept: sanity check data distributions.
+
+28) compute_vif_table(df, x_vars)
+- Computes Variance Inflation Factor for regressors.
+- Concept: detect multicollinearity.
+
+29) save_vif(df, x_vars, output_dir)
+- Saves VIF table.
+
+30) hausman_test_fe_re(df, y, x_vars)
+- Runs Hausman test to choose between FE and RE.
+- Concept: tests if RE assumptions hold; if not, FE is preferred.
+
+------------------------------------------------------------
+
+KEY CONCEPTS SUMMARY
+
+- Relative frequency = keyword_count / total_words.
+- Min–max normalization: scale to [0,1] for comparability.
+- Entropy weighting: gives higher weight to discriminative keywords.
+- Composite indices: FTII, FTOI, FTI created from weighted sums.
+- Panel models:
+  * FE: uses within-bank variation.
+  * RE: uses both within- and between-bank variation.
+- PCSE: robust errors correcting for heteroskedasticity and correlation.
+- Common errors:
+  * "Full column rank" → not enough variation in data.
+  * Small sample size → unstable regressions.
+  * Merge drop → bank/year mismatch between indices and financials.
+
+------------------------------------------------------------
+
+HOW TO STUDY
+- Trace outputs step by step: corpus → clean corpus → frequencies → normalized → entropy → indices → analysis dataset → regressions.
+- Start with OLS (ROA ~ FTI).
+- Add more banks and years for FE/RE to work properly.
+- Use diagnostics to check data quality.
+
+END OF FILE
