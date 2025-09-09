@@ -16,7 +16,8 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 import re
 import pandas as pd
-from PyPDF2 import PdfReader
+# from PyPDF2 import PdfReader
+from pypdf import PdfReader
 
 # -----------------------------
 # Small logging helper
@@ -52,7 +53,8 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
 def build_corpus(data_dir: Path) -> pd.DataFrame:
     log("Step 2", "Scanning PDFs in data/ ...", "INFO")
     rows = []
-    for pdf in sorted(data_dir.glob("*.pdf")):
+    # changed glob → rglob so it scans recursively
+    for pdf in sorted(data_dir.rglob("*.pdf")):
         # Expect BankName_YYYY.pdf
         try:
             bank, y = pdf.stem.rsplit("_", 1)
@@ -61,7 +63,12 @@ def build_corpus(data_dir: Path) -> pd.DataFrame:
             log("Step 2", f"Skip (bad name): {pdf.name} (expected BankName_YYYY.pdf)", "WARNING")
             continue
         txt = extract_text_from_pdf(pdf)
-        rows.append({"bank": bank.strip(), "year": year, "filename": pdf.name, "raw_text": txt})
+        rows.append({
+            "bank": bank.strip(),
+            "year": year,
+            "filename": str(pdf.relative_to(data_dir)),  # show relative path
+            "raw_text": txt
+        })
     df = pd.DataFrame(rows).sort_values(["bank", "year"]).reset_index(drop=True)
     if df.empty:
         log("Step 2", "No valid PDFs found.", "WARNING")
@@ -93,7 +100,7 @@ def get_fintech_keywords() -> Dict[str, List[str]]:
     return kws
 
 # -----------------------------
-# Step 4. Normalize text
+# Step 4. Normalize text - kemaskan text yang kita dah extract
 # -----------------------------
 _WS = re.compile(r"\s+")
 def normalize_text(s: str) -> str:
@@ -117,7 +124,7 @@ def preprocess_corpus(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 # -----------------------------
-# Step 5. Count keyword freq
+# Step 5. Count keyword frequencies
 # -----------------------------
 def _compile_patterns(kws_by_group: Dict[str, List[str]]) -> Dict[str, Dict[str, re.Pattern]]:
     compiled = {}

@@ -59,6 +59,11 @@ Results are saved into the `outputs/` folder:
 -----------------------------------------
 6. How to Run
 -----------------------------------------
+1. Open folder yang nak run
+2. Find three dots, open terminal
+3. copy paste --> venv/Scripts/activate
+4. tekan play button to run the code
+
 From the terminal, run:
 
     python kf_calculation.py
