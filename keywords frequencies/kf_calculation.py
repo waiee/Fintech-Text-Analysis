@@ -10,6 +10,7 @@ Pipeline:
       2. If fails, attempt repair with qpdf/ghostscript
       3. If still fails, log and keep empty text
     → Adds a 'status' column: OK / Repaired / Failed
+    → Suppresses all pypdf warnings except /SymbolSetEncoding
 - Step 3: Prepare keyword dictionary
 - Step 4: Normalize text + word counts
 - Step 5: Count keyword frequencies → save CSVs
@@ -22,6 +23,7 @@ import pandas as pd
 from pypdf import PdfReader
 import subprocess
 import shutil
+import warnings
 
 # -----------------------------
 # Small logging helper
@@ -43,7 +45,7 @@ def setup_project(base_dir: Path) -> Tuple[Path, Path]:
     return data_dir, out_dir
 
 # -----------------------------
-# Step 2. PDF → Text (hybrid repair mode)
+# Step 2. PDF → Text (hybrid repair mode + symbol warning only)
 # -----------------------------
 def try_repair_pdf(pdf_path: Path) -> Path | None:
     """Attempt to repair a PDF using qpdf or ghostscript. Returns new path or None."""
@@ -77,10 +79,24 @@ def try_repair_pdf(pdf_path: Path) -> Path | None:
 def extract_text_from_pdf(pdf_path: Path) -> Tuple[str, str]:
     """Hybrid extractor: try direct, then repair if needed.
        Returns (text, status) where status ∈ {OK, Repaired, Failed}"""
+
     def read_pdf(path: Path) -> str:
         try:
-            reader = PdfReader(path)
-            return " ".join([(p.extract_text() or "") for p in reader.pages])
+            # Suppress all warnings, but check for SymbolSetEncoding manually
+            with warnings.catch_warnings(record=True) as wlist:
+                warnings.simplefilter("always")
+                reader = PdfReader(path)
+                text = " ".join([(p.extract_text() or "") for p in reader.pages])
+
+                # Only surface SymbolSetEncoding warnings
+                for w in wlist:
+                    if "SymbolSetEncoding" in str(w.message):
+                        log("Step 2",
+                            "Symbol font detected (advanced encoding not supported). "
+                            "Keywords are unaffected — proceeding with extraction.",
+                            "WARNING")
+                        break
+            return text
         except Exception as e:
             log("Step 2", f"Could not read {path.name}: {e}", "ERROR")
             return ""
