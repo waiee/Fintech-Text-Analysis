@@ -1,23 +1,27 @@
-# main_keywords_only.py
+# kf_calculation.py
 """
-Fintech Keyword Frequency (Steps 1–5 only)
+Fintech Keyword Frequency (Hybrid PDF handling with status column)
 
-What it does:
+Pipeline:
 - Step 1: Create data/ and outputs/ folders beside this file
-- Step 2: Read all PDFs in data/ (expects BankName_YYYY.pdf)
-- Step 3: Prepare keyword dictionary (FTII / FTOI)
-- Step 4: Normalize text (+ word counts)
-- Step 5: Count keyword frequencies and save:
-    - outputs/keyword_freq_long.csv
-    - outputs/keyword_freq_wide.csv
+- Step 2: Read all PDFs in data/ (BankName_YYYY.pdf)
+    Hybrid approach:
+      1. Try normal pypdf read
+      2. If fails, attempt repair with qpdf/ghostscript
+      3. If still fails, log and keep empty text
+    → Adds a 'status' column: OK / Repaired / Failed
+- Step 3: Prepare keyword dictionary
+- Step 4: Normalize text + word counts
+- Step 5: Count keyword frequencies → save CSVs
 """
 
 from pathlib import Path
 from typing import Dict, List, Tuple
 import re
 import pandas as pd
-# from PyPDF2 import PdfReader
 from pypdf import PdfReader
+import subprocess
+import shutil
 
 # -----------------------------
 # Small logging helper
@@ -39,35 +43,82 @@ def setup_project(base_dir: Path) -> Tuple[Path, Path]:
     return data_dir, out_dir
 
 # -----------------------------
-# Step 2. PDF → Text
+# Step 2. PDF → Text (hybrid repair mode)
 # -----------------------------
-def extract_text_from_pdf(pdf_path: Path) -> str:
-    try:
-        reader = PdfReader(pdf_path)
-        pages = [(p.extract_text() or "") for p in reader.pages]
-        return " ".join(pages)
-    except Exception as e:
-        log("Step 2", f"Could not read {pdf_path.name}: {e}", "ERROR")
-        return ""
+def try_repair_pdf(pdf_path: Path) -> Path | None:
+    """Attempt to repair a PDF using qpdf or ghostscript. Returns new path or None."""
+    repaired = pdf_path.parent / f"repaired_{pdf_path.name}"
+
+    # Prefer qpdf if available
+    if shutil.which("qpdf"):
+        cmd = ["qpdf", "--linearize", str(pdf_path), str(repaired)]
+        try:
+            subprocess.run(cmd, check=True, capture_output=True)
+            log("Step 2", f"Repaired with qpdf → {repaired.name}", "OK")
+            return repaired
+        except subprocess.CalledProcessError as e:
+            log("Step 2", f"qpdf failed on {pdf_path.name}: {e}", "WARNING")
+
+    # Fallback to ghostscript if available
+    if shutil.which("gs"):
+        cmd = ["gs", "-sDEVICE=pdfwrite", "-dNOPAUSE", "-dBATCH",
+               f"-sOutputFile={repaired}", str(pdf_path)]
+        try:
+            subprocess.run(cmd, check=True, capture_output=True)
+            log("Step 2", f"Repaired with ghostscript → {repaired.name}", "OK")
+            return repaired
+        except subprocess.CalledProcessError as e:
+            log("Step 2", f"Ghostscript failed on {pdf_path.name}: {e}", "WARNING")
+
+    log("Step 2", f"No repair tool available for {pdf_path.name}", "WARNING")
+    return None
+
+
+def extract_text_from_pdf(pdf_path: Path) -> Tuple[str, str]:
+    """Hybrid extractor: try direct, then repair if needed.
+       Returns (text, status) where status ∈ {OK, Repaired, Failed}"""
+    def read_pdf(path: Path) -> str:
+        try:
+            reader = PdfReader(path)
+            return " ".join([(p.extract_text() or "") for p in reader.pages])
+        except Exception as e:
+            log("Step 2", f"Could not read {path.name}: {e}", "ERROR")
+            return ""
+
+    # First try normal read
+    text = read_pdf(pdf_path)
+    if text.strip():
+        return text, "OK"
+
+    # Try repair if empty or broken
+    repaired = try_repair_pdf(pdf_path)
+    if repaired and repaired.exists():
+        text = read_pdf(repaired)
+        if text.strip():
+            return text, "Repaired"
+
+    # Still nothing → return empty but log
+    log("Step 2", f"Proceeding with empty text for {pdf_path.name}", "WARNING")
+    return "", "Failed"
+
 
 def build_corpus(data_dir: Path) -> pd.DataFrame:
     log("Step 2", "Scanning PDFs in data/ ...", "INFO")
     rows = []
-    # changed glob → rglob so it scans recursively
     for pdf in sorted(data_dir.rglob("*.pdf")):
-        # Expect BankName_YYYY.pdf
         try:
             bank, y = pdf.stem.rsplit("_", 1)
             year = int(y)
         except ValueError:
             log("Step 2", f"Skip (bad name): {pdf.name} (expected BankName_YYYY.pdf)", "WARNING")
             continue
-        txt = extract_text_from_pdf(pdf)
+        txt, status = extract_text_from_pdf(pdf)
         rows.append({
             "bank": bank.strip(),
             "year": year,
-            "filename": str(pdf.relative_to(data_dir)),  # show relative path
-            "raw_text": txt
+            "filename": str(pdf.relative_to(data_dir)),
+            "raw_text": txt,
+            "status": status
         })
     df = pd.DataFrame(rows).sort_values(["bank", "year"]).reset_index(drop=True)
     if df.empty:
@@ -80,7 +131,6 @@ def build_corpus(data_dir: Path) -> pd.DataFrame:
 # Step 3. Keywords
 # -----------------------------
 def get_fintech_keywords() -> Dict[str, List[str]]:
-    # FTII = input/technology; FTOI = output/innovation
     kws = {
         "FTII": [
             "artificial intelligence", "ai", "face recognition", "voice recognition",
@@ -100,7 +150,7 @@ def get_fintech_keywords() -> Dict[str, List[str]]:
     return kws
 
 # -----------------------------
-# Step 4. Normalize text - kemaskan text yang kita dah extract
+# Step 4. Normalize text
 # -----------------------------
 _WS = re.compile(r"\s+")
 def normalize_text(s: str) -> str:
@@ -139,23 +189,34 @@ def _compile_patterns(kws_by_group: Dict[str, List[str]]) -> Dict[str, Dict[str,
 
 def count_keywords(df_clean: pd.DataFrame, kws_by_group: Dict[str, List[str]]) -> tuple[pd.DataFrame, pd.DataFrame]:
     if df_clean.empty:
-        cols = ["bank", "year", "group", "keyword", "count", "rel_freq"]
+        cols = ["bank", "year", "group", "keyword", "count", "rel_freq", "status"]
         return pd.DataFrame(columns=cols), pd.DataFrame()
     patterns = _compile_patterns(kws_by_group)
     rows = []
     for _, r in df_clean.iterrows():
-        bank, year, text, wc = r["bank"], int(r["year"]), r.get("clean_text", "") or "", int(r.get("word_count", 0) or 0)
+        bank, year, text, wc, status = (
+            r["bank"], int(r["year"]),
+            r.get("clean_text", "") or "",
+            int(r.get("word_count", 0) or 0),
+            r.get("status", "Unknown")
+        )
         for grp, pats in patterns.items():
             for kw, pat in pats.items():
                 c = len(pat.findall(text))
                 rel = (c / wc) if wc > 0 else 0.0
-                rows.append({"bank": bank, "year": year, "group": grp, "keyword": kw, "count": c, "rel_freq": rel})
+                rows.append({
+                    "bank": bank,
+                    "year": year,
+                    "group": grp,
+                    "keyword": kw,
+                    "count": c,
+                    "rel_freq": rel,
+                    "status": status
+                })
     long_df = pd.DataFrame(rows).sort_values(["bank", "year", "group", "keyword"]).reset_index(drop=True)
-
     if long_df.empty:
         log("Step 5", "No keyword matches found; wide table will be empty.", "WARNING")
         return long_df, pd.DataFrame()
-
     long_df["colname"] = long_df.apply(lambda x: f"{x['group']}__{x['keyword']}", axis=1)
     wide_df = (
         long_df.pivot_table(index=["bank", "year"], columns="colname", values="rel_freq", aggfunc="first")
@@ -186,8 +247,12 @@ if __name__ == "__main__":
     BASE = Path(__file__).resolve().parent
     DATA_DIR, OUT_DIR = setup_project(BASE)
 
-    # 2) PDFs → corpus
+    # 2) PDFs → corpus (hybrid mode with status)
     df_corpus = build_corpus(DATA_DIR)
+
+    # Save corpus with status for audit
+    df_corpus.to_csv(OUT_DIR / "corpus_status.csv", index=False, encoding="utf-8")
+    log("Step 2", f"Corpus (with status) saved → {OUT_DIR/'corpus_status.csv'}", "OK")
 
     # 3) Keywords
     keywords = get_fintech_keywords()
