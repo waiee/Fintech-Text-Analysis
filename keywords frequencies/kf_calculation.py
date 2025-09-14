@@ -1,6 +1,6 @@
 # kf_calculation.py
 """
-Fintech Keyword Frequency (Hybrid PDF handling with status column)
+Fintech Keyword Frequency (Hybrid PDF handling with status column + summary)
 
 Pipeline:
 - Step 1: Create data/ and outputs/ folders beside this file
@@ -10,7 +10,8 @@ Pipeline:
       2. If fails, attempt repair with qpdf/ghostscript
       3. If still fails, log and keep empty text
     → Adds a 'status' column: OK / Repaired / Failed
-    → Suppresses all pypdf warnings except /SymbolSetEncoding
+    → Suppresses all pypdf warnings (clean logs)
+    → Prints a final summary (OK / Repaired / Failed counts)
 - Step 3: Prepare keyword dictionary
 - Step 4: Normalize text + word counts
 - Step 5: Count keyword frequencies → save CSVs
@@ -45,7 +46,7 @@ def setup_project(base_dir: Path) -> Tuple[Path, Path]:
     return data_dir, out_dir
 
 # -----------------------------
-# Step 2. PDF → Text (hybrid repair mode + symbol warning only)
+# Step 2. PDF → Text (hybrid repair mode, warnings suppressed)
 # -----------------------------
 def try_repair_pdf(pdf_path: Path) -> Path | None:
     """Attempt to repair a PDF using qpdf or ghostscript. Returns new path or None."""
@@ -82,21 +83,11 @@ def extract_text_from_pdf(pdf_path: Path) -> Tuple[str, str]:
 
     def read_pdf(path: Path) -> str:
         try:
-            # Suppress all warnings, but check for SymbolSetEncoding manually
-            with warnings.catch_warnings(record=True) as wlist:
-                warnings.simplefilter("always")
+            # Suppress all warnings from pypdf
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
                 reader = PdfReader(path)
-                text = " ".join([(p.extract_text() or "") for p in reader.pages])
-
-                # Only surface SymbolSetEncoding warnings
-                for w in wlist:
-                    if "SymbolSetEncoding" in str(w.message):
-                        log("Step 2",
-                            "Symbol font detected (advanced encoding not supported). "
-                            "Keywords are unaffected — proceeding with extraction.",
-                            "WARNING")
-                        break
-            return text
+                return " ".join([(p.extract_text() or "") for p in reader.pages])
         except Exception as e:
             log("Step 2", f"Could not read {path.name}: {e}", "ERROR")
             return ""
@@ -279,5 +270,13 @@ if __name__ == "__main__":
     # 5) Count & save
     freq_long, freq_wide = count_keywords(df_clean, keywords)
     save_keyword_freq_outputs(freq_long, freq_wide, OUT_DIR)
+
+    # Final summary
+    total = len(df_corpus)
+    summary = df_corpus["status"].value_counts().to_dict()
+    ok = summary.get("OK", 0)
+    repaired = summary.get("Repaired", 0)
+    failed = summary.get("Failed", 0)
+    log("Summary", f"Processed {total} PDFs → {ok} OK, {repaired} Repaired, {failed} Failed", "INFO")
 
     log("Done", "Keyword frequency pipeline finished.", "OK")
