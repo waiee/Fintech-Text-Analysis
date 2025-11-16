@@ -5,13 +5,15 @@ Fintech Keyword Frequency (Hybrid PDF handling with status column + summary)
 Pipeline:
 - Step 1: Create data/ and outputs/ folders beside this file
 - Step 2: Read all PDFs in data/ (BankName_YYYY.pdf)
-    Hybrid approach:
-      1. Try normal pypdf read
-      2. If fails, attempt repair with qpdf/ghostscript
-      3. If still fails, log and keep empty text
-    → Adds a 'status' column: OK / Repaired / Failed
-    → Suppresses all pypdf warnings (clean logs)
-    → Prints a final summary (OK / Repaired / Failed counts)
+    Multi-library fallback approach:
+      1. Try pypdf
+      2. If fails/empty → Try pdfplumber
+      3. If fails/empty → Try PyMuPDF (fitz)
+      4. If fails/empty → Try OCR (pytesseract + pdf2image)
+      5. If still empty → log silently and keep empty text
+    → Adds a 'status' column showing which method worked: pypdf / pdfplumber / PyMuPDF / OCR / Failed
+    → Suppresses all library warnings (clean logs)
+    → Prints a final summary showing extraction method distribution
 - Step 3: Prepare keyword dictionary
 - Step 4: Normalize text + word counts
 - Step 5: Count keyword frequencies → save CSVs
@@ -22,9 +24,13 @@ from typing import Dict, List, Tuple
 import re
 import pandas as pd
 from pypdf import PdfReader
-import subprocess
-import shutil
+import pdfplumber
+import fitz  # PyMuPDF
+import pytesseract
+from pdf2image import convert_from_path
+from PIL import Image
 import warnings
+import io
 
 # -----------------------------
 # Small logging helper
@@ -46,66 +52,67 @@ def setup_project(base_dir: Path) -> Tuple[Path, Path]:
     return data_dir, out_dir
 
 # -----------------------------
-# Step 2. PDF → Text (hybrid repair mode, warnings suppressed)
+# Step 2. PDF → Text (multi-library fallback with OCR, warnings suppressed)
 # -----------------------------
-def try_repair_pdf(pdf_path: Path) -> Path | None:
-    """Attempt to repair a PDF using qpdf or ghostscript. Returns new path or None."""
-    repaired = pdf_path.parent / f"repaired_{pdf_path.name}"
-
-    # Prefer qpdf if available
-    if shutil.which("qpdf"):
-        cmd = ["qpdf", "--linearize", str(pdf_path), str(repaired)]
-        try:
-            subprocess.run(cmd, check=True, capture_output=True)
-            log("Step 2", f"Repaired with qpdf → {repaired.name}", "OK")
-            return repaired
-        except subprocess.CalledProcessError as e:
-            log("Step 2", f"qpdf failed on {pdf_path.name}: {e}", "WARNING")
-
-    # Fallback to ghostscript if available
-    if shutil.which("gs"):
-        cmd = ["gs", "-sDEVICE=pdfwrite", "-dNOPAUSE", "-dBATCH",
-               f"-sOutputFile={repaired}", str(pdf_path)]
-        try:
-            subprocess.run(cmd, check=True, capture_output=True)
-            log("Step 2", f"Repaired with ghostscript → {repaired.name}", "OK")
-            return repaired
-        except subprocess.CalledProcessError as e:
-            log("Step 2", f"Ghostscript failed on {pdf_path.name}: {e}", "WARNING")
-
-    log("Step 2", f"No repair tool available for {pdf_path.name}", "WARNING")
-    return None
-
-
 def extract_text_from_pdf(pdf_path: Path) -> Tuple[str, str]:
-    """Hybrid extractor: try direct, then repair if needed.
-       Returns (text, status) where status ∈ {OK, Repaired, Failed}"""
+    """Multi-library fallback extractor with OCR support.
+       Returns (text, status) where status shows which method worked:
+       pypdf / pdfplumber / PyMuPDF / OCR / Failed"""
 
-    def read_pdf(path: Path) -> str:
-        try:
-            # Suppress all warnings from pypdf
-            with warnings.catch_warnings():
-                warnings.simplefilter("ignore")
-                reader = PdfReader(path)
-                return " ".join([(p.extract_text() or "") for p in reader.pages])
-        except Exception as e:
-            log("Step 2", f"Could not read {path.name}: {e}", "ERROR")
-            return ""
+    # Method 1: Try pypdf
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            reader = PdfReader(str(pdf_path))
+            text = " ".join([(p.extract_text() or "") for p in reader.pages])
+            if text.strip():
+                return text, "pypdf"
+    except Exception:
+        pass
 
-    # First try normal read
-    text = read_pdf(pdf_path)
-    if text.strip():
-        return text, "OK"
+    # Method 2: Try pdfplumber
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            with pdfplumber.open(str(pdf_path)) as pdf:
+                text = " ".join([
+                    (page.extract_text() or "") for page in pdf.pages
+                ])
+                if text.strip():
+                    return text, "pdfplumber"
+    except Exception:
+        pass
 
-    # Try repair if empty or broken
-    repaired = try_repair_pdf(pdf_path)
-    if repaired and repaired.exists():
-        text = read_pdf(repaired)
-        if text.strip():
-            return text, "Repaired"
+    # Method 3: Try PyMuPDF (fitz)
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            doc = fitz.open(str(pdf_path))
+            text = " ".join([page.get_text() for page in doc])
+            doc.close()
+            if text.strip():
+                return text, "PyMuPDF"
+    except Exception:
+        pass
 
-    # Still nothing → return empty but log
-    log("Step 2", f"Proceeding with empty text for {pdf_path.name}", "WARNING")
+    # Method 4: Try OCR (pytesseract + pdf2image)
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            # Convert PDF pages to images
+            images = convert_from_path(str(pdf_path), dpi=200)
+            text_parts = []
+            for img in images:
+                # Extract text from each image using OCR
+                ocr_text = pytesseract.image_to_string(img)
+                text_parts.append(ocr_text)
+            text = " ".join(text_parts)
+            if text.strip():
+                return text, "OCR"
+    except Exception:
+        pass
+
+    # All methods failed → return empty silently
     return "", "Failed"
 
 
@@ -274,9 +281,11 @@ if __name__ == "__main__":
     # Final summary
     total = len(df_corpus)
     summary = df_corpus["status"].value_counts().to_dict()
-    ok = summary.get("OK", 0)
-    repaired = summary.get("Repaired", 0)
+    pypdf_count = summary.get("pypdf", 0)
+    pdfplumber_count = summary.get("pdfplumber", 0)
+    pymupdf_count = summary.get("PyMuPDF", 0)
+    ocr_count = summary.get("OCR", 0)
     failed = summary.get("Failed", 0)
-    log("Summary", f"Processed {total} PDFs → {ok} OK, {repaired} Repaired, {failed} Failed", "INFO")
+    log("Summary", f"Processed {total} PDFs → pypdf: {pypdf_count}, pdfplumber: {pdfplumber_count}, PyMuPDF: {pymupdf_count}, OCR: {ocr_count}, Failed: {failed}", "INFO")
 
     log("Done", "Keyword frequency pipeline finished.", "OK")

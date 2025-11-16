@@ -1,661 +1,661 @@
 bank,year,group,keyword,count,rel_freq,status,colname
-CIMB,2015,FTII,ai,0,0.0,OK,FTII__ai
-CIMB,2015,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2015,FTII,artificial intelligence,0,0.0,OK,FTII__artificial intelligence
-CIMB,2015,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2015,FTII,big data,0,0.0,OK,FTII__big data
-CIMB,2015,FTII,blockchain,0,0.0,OK,FTII__blockchain
-CIMB,2015,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2015,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2015,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2015,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2015,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2015,FTII,data mining,1,8.920765758532712e-06,OK,FTII__data mining
-CIMB,2015,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2015,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-CIMB,2015,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2015,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2015,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2015,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2015,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2015,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2015,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2015,FTOI,digital wallet,2,1.7841531517065425e-05,OK,FTOI__digital wallet
-CIMB,2015,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2015,FTOI,internet banking,0,0.0,OK,FTOI__internet banking
-CIMB,2015,FTOI,lending platform,1,8.920765758532712e-06,OK,FTOI__lending platform
-CIMB,2015,FTOI,mobile banking,8,7.13661260682617e-05,OK,FTOI__mobile banking
-CIMB,2015,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-CIMB,2015,FTOI,online banking,3,2.676229727559814e-05,OK,FTOI__online banking
-CIMB,2015,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2015,FTOI,online loan,0,0.0,OK,FTOI__online loan
-CIMB,2015,FTOI,online payment,0,0.0,OK,FTOI__online payment
-CIMB,2015,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2015,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-CIMB,2016,FTII,ai,0,0.0,OK,FTII__ai
-CIMB,2016,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2016,FTII,artificial intelligence,0,0.0,OK,FTII__artificial intelligence
-CIMB,2016,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2016,FTII,big data,3,2.393336949931391e-05,OK,FTII__big data
-CIMB,2016,FTII,blockchain,0,0.0,OK,FTII__blockchain
-CIMB,2016,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2016,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2016,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2016,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2016,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2016,FTII,data mining,0,0.0,OK,FTII__data mining
-CIMB,2016,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2016,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-CIMB,2016,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2016,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2016,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2016,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2016,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2016,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2016,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2016,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-CIMB,2016,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2016,FTOI,internet banking,3,2.393336949931391e-05,OK,FTOI__internet banking
-CIMB,2016,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-CIMB,2016,FTOI,mobile banking,10,7.977789833104637e-05,OK,FTOI__mobile banking
-CIMB,2016,FTOI,mobile payment,2,1.5955579666209275e-05,OK,FTOI__mobile payment
-CIMB,2016,FTOI,online banking,6,4.786673899862782e-05,OK,FTOI__online banking
-CIMB,2016,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2016,FTOI,online loan,0,0.0,OK,FTOI__online loan
-CIMB,2016,FTOI,online payment,0,0.0,OK,FTOI__online payment
-CIMB,2016,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2016,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-CIMB,2017,FTII,ai,2,1.8690191387559808e-05,OK,FTII__ai
-CIMB,2017,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2017,FTII,artificial intelligence,6,5.607057416267943e-05,OK,FTII__artificial intelligence
-CIMB,2017,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2017,FTII,big data,12,0.00011214114832535885,OK,FTII__big data
-CIMB,2017,FTII,blockchain,4,3.7380382775119616e-05,OK,FTII__blockchain
-CIMB,2017,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2017,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2017,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2017,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2017,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2017,FTII,data mining,0,0.0,OK,FTII__data mining
-CIMB,2017,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2017,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-CIMB,2017,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2017,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2017,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2017,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2017,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2017,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2017,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2017,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-CIMB,2017,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2017,FTOI,internet banking,0,0.0,OK,FTOI__internet banking
-CIMB,2017,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-CIMB,2017,FTOI,mobile banking,5,4.672547846889952e-05,OK,FTOI__mobile banking
-CIMB,2017,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-CIMB,2017,FTOI,online banking,3,2.8035287081339714e-05,OK,FTOI__online banking
-CIMB,2017,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2017,FTOI,online loan,0,0.0,OK,FTOI__online loan
-CIMB,2017,FTOI,online payment,0,0.0,OK,FTOI__online payment
-CIMB,2017,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2017,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-CIMB,2018,FTII,ai,9,8.78829009169116e-05,OK,FTII__ai
-CIMB,2018,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2018,FTII,artificial intelligence,6,5.85886006112744e-05,OK,FTII__artificial intelligence
-CIMB,2018,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2018,FTII,big data,5,4.8823833842728667e-05,OK,FTII__big data
-CIMB,2018,FTII,blockchain,10,9.764766768545733e-05,OK,FTII__blockchain
-CIMB,2018,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2018,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2018,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2018,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2018,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2018,FTII,data mining,1,9.764766768545733e-06,OK,FTII__data mining
-CIMB,2018,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2018,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-CIMB,2018,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2018,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2018,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2018,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2018,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2018,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2018,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2018,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-CIMB,2018,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2018,FTOI,internet banking,2,1.9529533537091466e-05,OK,FTOI__internet banking
-CIMB,2018,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-CIMB,2018,FTOI,mobile banking,4,3.905906707418293e-05,OK,FTOI__mobile banking
-CIMB,2018,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-CIMB,2018,FTOI,online banking,7,6.835336737982013e-05,OK,FTOI__online banking
-CIMB,2018,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2018,FTOI,online loan,0,0.0,OK,FTOI__online loan
-CIMB,2018,FTOI,online payment,0,0.0,OK,FTOI__online payment
-CIMB,2018,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2018,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-CIMB,2019,FTII,ai,1,1.1679650544855698e-05,OK,FTII__ai
-CIMB,2019,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2019,FTII,artificial intelligence,1,1.1679650544855698e-05,OK,FTII__artificial intelligence
-CIMB,2019,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2019,FTII,big data,7,8.175755381398989e-05,OK,FTII__big data
-CIMB,2019,FTII,blockchain,7,8.175755381398989e-05,OK,FTII__blockchain
-CIMB,2019,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2019,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2019,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2019,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2019,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2019,FTII,data mining,0,0.0,OK,FTII__data mining
-CIMB,2019,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2019,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-CIMB,2019,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2019,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2019,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2019,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2019,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2019,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2019,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2019,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-CIMB,2019,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2019,FTOI,internet banking,1,1.1679650544855698e-05,OK,FTOI__internet banking
-CIMB,2019,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-CIMB,2019,FTOI,mobile banking,6,7.007790326913419e-05,OK,FTOI__mobile banking
-CIMB,2019,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-CIMB,2019,FTOI,online banking,6,7.007790326913419e-05,OK,FTOI__online banking
-CIMB,2019,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2019,FTOI,online loan,0,0.0,OK,FTOI__online loan
-CIMB,2019,FTOI,online payment,1,1.1679650544855698e-05,OK,FTOI__online payment
-CIMB,2019,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2019,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-CIMB,2020,FTII,ai,3,3.9389204731956464e-05,OK,FTII__ai
-CIMB,2020,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2020,FTII,artificial intelligence,0,0.0,OK,FTII__artificial intelligence
-CIMB,2020,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2020,FTII,big data,5,6.564867455326078e-05,OK,FTII__big data
-CIMB,2020,FTII,blockchain,1,1.3129734910652154e-05,OK,FTII__blockchain
-CIMB,2020,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2020,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2020,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2020,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2020,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2020,FTII,data mining,0,0.0,OK,FTII__data mining
-CIMB,2020,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2020,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-CIMB,2020,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2020,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2020,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2020,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2020,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2020,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2020,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2020,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-CIMB,2020,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2020,FTOI,internet banking,0,0.0,OK,FTOI__internet banking
-CIMB,2020,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-CIMB,2020,FTOI,mobile banking,4,5.2518939642608616e-05,OK,FTOI__mobile banking
-CIMB,2020,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-CIMB,2020,FTOI,online banking,4,5.2518939642608616e-05,OK,FTOI__online banking
-CIMB,2020,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2020,FTOI,online loan,0,0.0,OK,FTOI__online loan
-CIMB,2020,FTOI,online payment,0,0.0,OK,FTOI__online payment
-CIMB,2020,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2020,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-CIMB,2021,FTII,ai,1,8.493434575073469e-06,OK,FTII__ai
-CIMB,2021,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2021,FTII,artificial intelligence,3,2.5480303725220406e-05,OK,FTII__artificial intelligence
-CIMB,2021,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2021,FTII,big data,7,5.945404202551428e-05,OK,FTII__big data
-CIMB,2021,FTII,blockchain,1,8.493434575073469e-06,OK,FTII__blockchain
-CIMB,2021,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2021,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2021,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2021,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2021,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2021,FTII,data mining,0,0.0,OK,FTII__data mining
-CIMB,2021,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2021,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-CIMB,2021,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2021,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2021,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2021,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2021,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2021,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2021,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2021,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-CIMB,2021,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2021,FTOI,internet banking,0,0.0,OK,FTOI__internet banking
-CIMB,2021,FTOI,lending platform,1,8.493434575073469e-06,OK,FTOI__lending platform
-CIMB,2021,FTOI,mobile banking,3,2.5480303725220406e-05,OK,FTOI__mobile banking
-CIMB,2021,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-CIMB,2021,FTOI,online banking,8,6.794747660058775e-05,OK,FTOI__online banking
-CIMB,2021,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2021,FTOI,online loan,1,8.493434575073469e-06,OK,FTOI__online loan
-CIMB,2021,FTOI,online payment,0,0.0,OK,FTOI__online payment
-CIMB,2021,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2021,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-CIMB,2022,FTII,ai,0,0.0,OK,FTII__ai
-CIMB,2022,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2022,FTII,artificial intelligence,5,4.3165591843429765e-05,OK,FTII__artificial intelligence
-CIMB,2022,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2022,FTII,big data,4,3.4532473474743815e-05,OK,FTII__big data
-CIMB,2022,FTII,blockchain,1,8.633118368685954e-06,OK,FTII__blockchain
-CIMB,2022,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2022,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2022,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2022,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2022,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2022,FTII,data mining,0,0.0,OK,FTII__data mining
-CIMB,2022,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2022,FTII,distributed ledger,1,8.633118368685954e-06,OK,FTII__distributed ledger
-CIMB,2022,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2022,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2022,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2022,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2022,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2022,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2022,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2022,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-CIMB,2022,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2022,FTOI,internet banking,1,8.633118368685954e-06,OK,FTOI__internet banking
-CIMB,2022,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-CIMB,2022,FTOI,mobile banking,7,6.043182858080167e-05,OK,FTOI__mobile banking
-CIMB,2022,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-CIMB,2022,FTOI,online banking,5,4.3165591843429765e-05,OK,FTOI__online banking
-CIMB,2022,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2022,FTOI,online loan,0,0.0,OK,FTOI__online loan
-CIMB,2022,FTOI,online payment,0,0.0,OK,FTOI__online payment
-CIMB,2022,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2022,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-CIMB,2023,FTII,ai,2,1.721170395869191e-05,OK,FTII__ai
-CIMB,2023,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2023,FTII,artificial intelligence,2,1.721170395869191e-05,OK,FTII__artificial intelligence
-CIMB,2023,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2023,FTII,big data,0,0.0,OK,FTII__big data
-CIMB,2023,FTII,blockchain,0,0.0,OK,FTII__blockchain
-CIMB,2023,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2023,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2023,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2023,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2023,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2023,FTII,data mining,0,0.0,OK,FTII__data mining
-CIMB,2023,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2023,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-CIMB,2023,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2023,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2023,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2023,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2023,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2023,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2023,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2023,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-CIMB,2023,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2023,FTOI,internet banking,0,0.0,OK,FTOI__internet banking
-CIMB,2023,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-CIMB,2023,FTOI,mobile banking,4,3.442340791738382e-05,OK,FTOI__mobile banking
-CIMB,2023,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-CIMB,2023,FTOI,online banking,5,4.302925989672978e-05,OK,FTOI__online banking
-CIMB,2023,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2023,FTOI,online loan,0,0.0,OK,FTOI__online loan
-CIMB,2023,FTOI,online payment,0,0.0,OK,FTOI__online payment
-CIMB,2023,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2023,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-CIMB,2024,FTII,ai,17,0.00013500849759367207,OK,FTII__ai
-CIMB,2024,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-CIMB,2024,FTII,artificial intelligence,8,6.353341063231627e-05,OK,FTII__artificial intelligence
-CIMB,2024,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-CIMB,2024,FTII,big data,2,1.5883352658079067e-05,OK,FTII__big data
-CIMB,2024,FTII,blockchain,0,0.0,OK,FTII__blockchain
-CIMB,2024,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-CIMB,2024,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-CIMB,2024,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-CIMB,2024,FTII,cloud service,0,0.0,OK,FTII__cloud service
-CIMB,2024,FTII,data flow,0,0.0,OK,FTII__data flow
-CIMB,2024,FTII,data mining,0,0.0,OK,FTII__data mining
-CIMB,2024,FTII,data visualization,0,0.0,OK,FTII__data visualization
-CIMB,2024,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-CIMB,2024,FTII,face recognition,0,0.0,OK,FTII__face recognition
-CIMB,2024,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-CIMB,2024,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-CIMB,2024,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-CIMB,2024,FTOI,bank app,0,0.0,OK,FTOI__bank app
-CIMB,2024,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-CIMB,2024,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-CIMB,2024,FTOI,digital wallet,1,7.941676329039533e-06,OK,FTOI__digital wallet
-CIMB,2024,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-CIMB,2024,FTOI,internet banking,0,0.0,OK,FTOI__internet banking
-CIMB,2024,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-CIMB,2024,FTOI,mobile banking,2,1.5883352658079067e-05,OK,FTOI__mobile banking
-CIMB,2024,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-CIMB,2024,FTOI,online banking,5,3.970838164519767e-05,OK,FTOI__online banking
-CIMB,2024,FTOI,online finance,0,0.0,OK,FTOI__online finance
-CIMB,2024,FTOI,online loan,0,0.0,OK,FTOI__online loan
-CIMB,2024,FTOI,online payment,0,0.0,OK,FTOI__online payment
-CIMB,2024,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-CIMB,2024,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2015,FTII,ai,2,1.629819171562915e-05,OK,FTII__ai
-Maybank,2015,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2015,FTII,artificial intelligence,0,0.0,OK,FTII__artificial intelligence
-Maybank,2015,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2015,FTII,big data,0,0.0,OK,FTII__big data
-Maybank,2015,FTII,blockchain,0,0.0,OK,FTII__blockchain
-Maybank,2015,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2015,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2015,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2015,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2015,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2015,FTII,data mining,0,0.0,OK,FTII__data mining
-Maybank,2015,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2015,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2015,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2015,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-Maybank,2015,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-Maybank,2015,FTOI,anti-fraud,4,3.25963834312583e-05,OK,FTOI__anti-fraud
-Maybank,2015,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2015,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-Maybank,2015,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2015,FTOI,digital wallet,1,8.149095857814575e-06,OK,FTOI__digital wallet
-Maybank,2015,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2015,FTOI,internet banking,17,0.0001385346295828478,OK,FTOI__internet banking
-Maybank,2015,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2015,FTOI,mobile banking,23,0.00018742920472973522,OK,FTOI__mobile banking
-Maybank,2015,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-Maybank,2015,FTOI,online banking,0,0.0,OK,FTOI__online banking
-Maybank,2015,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2015,FTOI,online loan,0,0.0,OK,FTOI__online loan
-Maybank,2015,FTOI,online payment,3,2.4447287573443728e-05,OK,FTOI__online payment
-Maybank,2015,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-Maybank,2015,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2016,FTII,ai,0,0.0,OK,FTII__ai
-Maybank,2016,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2016,FTII,artificial intelligence,0,0.0,OK,FTII__artificial intelligence
-Maybank,2016,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2016,FTII,big data,0,0.0,OK,FTII__big data
-Maybank,2016,FTII,blockchain,1,8.000640051204096e-06,OK,FTII__blockchain
-Maybank,2016,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2016,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2016,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2016,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2016,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2016,FTII,data mining,0,0.0,OK,FTII__data mining
-Maybank,2016,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2016,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2016,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2016,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-Maybank,2016,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-Maybank,2016,FTOI,anti-fraud,3,2.4001920153612287e-05,OK,FTOI__anti-fraud
-Maybank,2016,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2016,FTOI,credit evaluation,1,8.000640051204096e-06,OK,FTOI__credit evaluation
-Maybank,2016,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2016,FTOI,digital wallet,3,2.4001920153612287e-05,OK,FTOI__digital wallet
-Maybank,2016,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2016,FTOI,internet banking,14,0.00011200896071685735,OK,FTOI__internet banking
-Maybank,2016,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2016,FTOI,mobile banking,22,0.00017601408112649013,OK,FTOI__mobile banking
-Maybank,2016,FTOI,mobile payment,4,3.200256020481638e-05,OK,FTOI__mobile payment
-Maybank,2016,FTOI,online banking,2,1.600128010240819e-05,OK,FTOI__online banking
-Maybank,2016,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2016,FTOI,online loan,0,0.0,OK,FTOI__online loan
-Maybank,2016,FTOI,online payment,2,1.600128010240819e-05,OK,FTOI__online payment
-Maybank,2016,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-Maybank,2016,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2017,FTII,ai,0,0.0,OK,FTII__ai
-Maybank,2017,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2017,FTII,artificial intelligence,1,1.0688671077524932e-05,OK,FTII__artificial intelligence
-Maybank,2017,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2017,FTII,big data,1,1.0688671077524932e-05,OK,FTII__big data
-Maybank,2017,FTII,blockchain,0,0.0,OK,FTII__blockchain
-Maybank,2017,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2017,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2017,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2017,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2017,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2017,FTII,data mining,0,0.0,OK,FTII__data mining
-Maybank,2017,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2017,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2017,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2017,FTII,fingerprint recognition,3,3.206601323257479e-05,OK,FTII__fingerprint recognition
-Maybank,2017,FTII,voice recognition,4,4.2754684310099726e-05,OK,FTII__voice recognition
-Maybank,2017,FTOI,anti-fraud,2,2.1377342155049863e-05,OK,FTOI__anti-fraud
-Maybank,2017,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2017,FTOI,credit evaluation,1,1.0688671077524932e-05,OK,FTOI__credit evaluation
-Maybank,2017,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2017,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-Maybank,2017,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2017,FTOI,internet banking,3,3.206601323257479e-05,OK,FTOI__internet banking
-Maybank,2017,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2017,FTOI,mobile banking,10,0.00010688671077524932,OK,FTOI__mobile banking
-Maybank,2017,FTOI,mobile payment,5,5.344335538762466e-05,OK,FTOI__mobile payment
-Maybank,2017,FTOI,online banking,2,2.1377342155049863e-05,OK,FTOI__online banking
-Maybank,2017,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2017,FTOI,online loan,0,0.0,OK,FTOI__online loan
-Maybank,2017,FTOI,online payment,0,0.0,OK,FTOI__online payment
-Maybank,2017,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-Maybank,2017,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2018,FTII,ai,0,0.0,OK,FTII__ai
-Maybank,2018,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2018,FTII,artificial intelligence,4,4.656414793429799e-05,OK,FTII__artificial intelligence
-Maybank,2018,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2018,FTII,big data,1,1.1641036983574497e-05,OK,FTII__big data
-Maybank,2018,FTII,blockchain,1,1.1641036983574497e-05,OK,FTII__blockchain
-Maybank,2018,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2018,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2018,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2018,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2018,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2018,FTII,data mining,1,1.1641036983574497e-05,OK,FTII__data mining
-Maybank,2018,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2018,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2018,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2018,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-Maybank,2018,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-Maybank,2018,FTOI,anti-fraud,2,2.3282073967148993e-05,OK,FTOI__anti-fraud
-Maybank,2018,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2018,FTOI,credit evaluation,1,1.1641036983574497e-05,OK,FTOI__credit evaluation
-Maybank,2018,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2018,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-Maybank,2018,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2018,FTOI,internet banking,0,0.0,OK,FTOI__internet banking
-Maybank,2018,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2018,FTOI,mobile banking,4,4.656414793429799e-05,OK,FTOI__mobile banking
-Maybank,2018,FTOI,mobile payment,2,2.3282073967148993e-05,OK,FTOI__mobile payment
-Maybank,2018,FTOI,online banking,6,6.984622190144699e-05,OK,FTOI__online banking
-Maybank,2018,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2018,FTOI,online loan,1,1.1641036983574497e-05,OK,FTOI__online loan
-Maybank,2018,FTOI,online payment,0,0.0,OK,FTOI__online payment
-Maybank,2018,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-Maybank,2018,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2019,FTII,ai,6,7.938608097380259e-05,OK,FTII__ai
-Maybank,2019,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2019,FTII,artificial intelligence,4,5.292405398253506e-05,OK,FTII__artificial intelligence
-Maybank,2019,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2019,FTII,big data,0,0.0,OK,FTII__big data
-Maybank,2019,FTII,blockchain,0,0.0,OK,FTII__blockchain
-Maybank,2019,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2019,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2019,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2019,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2019,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2019,FTII,data mining,0,0.0,OK,FTII__data mining
-Maybank,2019,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2019,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2019,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2019,FTII,fingerprint recognition,1,1.3231013495633765e-05,OK,FTII__fingerprint recognition
-Maybank,2019,FTII,voice recognition,1,1.3231013495633765e-05,OK,FTII__voice recognition
-Maybank,2019,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-Maybank,2019,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2019,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-Maybank,2019,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2019,FTOI,digital wallet,3,3.9693040486901295e-05,OK,FTOI__digital wallet
-Maybank,2019,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2019,FTOI,internet banking,2,2.646202699126753e-05,OK,FTOI__internet banking
-Maybank,2019,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2019,FTOI,mobile banking,7,9.261709446943635e-05,OK,FTOI__mobile banking
-Maybank,2019,FTOI,mobile payment,1,1.3231013495633765e-05,OK,FTOI__mobile payment
-Maybank,2019,FTOI,online banking,5,6.615506747816882e-05,OK,FTOI__online banking
-Maybank,2019,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2019,FTOI,online loan,0,0.0,OK,FTOI__online loan
-Maybank,2019,FTOI,online payment,0,0.0,OK,FTOI__online payment
-Maybank,2019,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-Maybank,2019,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2020,FTII,ai,4,5.1680254266850996e-05,OK,FTII__ai
-Maybank,2020,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2020,FTII,artificial intelligence,4,5.1680254266850996e-05,OK,FTII__artificial intelligence
-Maybank,2020,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2020,FTII,big data,0,0.0,OK,FTII__big data
-Maybank,2020,FTII,blockchain,1,1.2920063566712749e-05,OK,FTII__blockchain
-Maybank,2020,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2020,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2020,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2020,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2020,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2020,FTII,data mining,0,0.0,OK,FTII__data mining
-Maybank,2020,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2020,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2020,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2020,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-Maybank,2020,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-Maybank,2020,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-Maybank,2020,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2020,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-Maybank,2020,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2020,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-Maybank,2020,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2020,FTOI,internet banking,1,1.2920063566712749e-05,OK,FTOI__internet banking
-Maybank,2020,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2020,FTOI,mobile banking,4,5.1680254266850996e-05,OK,FTOI__mobile banking
-Maybank,2020,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-Maybank,2020,FTOI,online banking,2,2.5840127133425498e-05,OK,FTOI__online banking
-Maybank,2020,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2020,FTOI,online loan,0,0.0,OK,FTOI__online loan
-Maybank,2020,FTOI,online payment,0,0.0,OK,FTOI__online payment
-Maybank,2020,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-Maybank,2020,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2021,FTII,ai,0,0.0,OK,FTII__ai
-Maybank,2021,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2021,FTII,artificial intelligence,1,1.2418657791465898e-05,OK,FTII__artificial intelligence
-Maybank,2021,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2021,FTII,big data,0,0.0,OK,FTII__big data
-Maybank,2021,FTII,blockchain,0,0.0,OK,FTII__blockchain
-Maybank,2021,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2021,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2021,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2021,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2021,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2021,FTII,data mining,0,0.0,OK,FTII__data mining
-Maybank,2021,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2021,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2021,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2021,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-Maybank,2021,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-Maybank,2021,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-Maybank,2021,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2021,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-Maybank,2021,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2021,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-Maybank,2021,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2021,FTOI,internet banking,5,6.209328895732949e-05,OK,FTOI__internet banking
-Maybank,2021,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2021,FTOI,mobile banking,5,6.209328895732949e-05,OK,FTOI__mobile banking
-Maybank,2021,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-Maybank,2021,FTOI,online banking,1,1.2418657791465898e-05,OK,FTOI__online banking
-Maybank,2021,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2021,FTOI,online loan,1,1.2418657791465898e-05,OK,FTOI__online loan
-Maybank,2021,FTOI,online payment,0,0.0,OK,FTOI__online payment
-Maybank,2021,FTOI,predictive model,2,2.4837315582931796e-05,OK,FTOI__predictive model
-Maybank,2021,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2022,FTII,ai,4,4.56141951375268e-05,OK,FTII__ai
-Maybank,2022,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2022,FTII,artificial intelligence,4,4.56141951375268e-05,OK,FTII__artificial intelligence
-Maybank,2022,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2022,FTII,big data,1,1.14035487843817e-05,OK,FTII__big data
-Maybank,2022,FTII,blockchain,0,0.0,OK,FTII__blockchain
-Maybank,2022,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2022,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2022,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2022,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2022,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2022,FTII,data mining,0,0.0,OK,FTII__data mining
-Maybank,2022,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2022,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2022,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2022,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-Maybank,2022,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-Maybank,2022,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-Maybank,2022,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2022,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-Maybank,2022,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2022,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-Maybank,2022,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2022,FTOI,internet banking,6,6.84212927062902e-05,OK,FTOI__internet banking
-Maybank,2022,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2022,FTOI,mobile banking,8,9.12283902750536e-05,OK,FTOI__mobile banking
-Maybank,2022,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-Maybank,2022,FTOI,online banking,5,5.70177439219085e-05,OK,FTOI__online banking
-Maybank,2022,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2022,FTOI,online loan,0,0.0,OK,FTOI__online loan
-Maybank,2022,FTOI,online payment,0,0.0,OK,FTOI__online payment
-Maybank,2022,FTOI,predictive model,1,1.14035487843817e-05,OK,FTOI__predictive model
-Maybank,2022,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2023,FTII,ai,20,0.00019793749134023475,OK,FTII__ai
-Maybank,2023,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2023,FTII,artificial intelligence,4,3.958749826804695e-05,OK,FTII__artificial intelligence
-Maybank,2023,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2023,FTII,big data,1,9.896874567011738e-06,OK,FTII__big data
-Maybank,2023,FTII,blockchain,1,9.896874567011738e-06,OK,FTII__blockchain
-Maybank,2023,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2023,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2023,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2023,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2023,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2023,FTII,data mining,0,0.0,OK,FTII__data mining
-Maybank,2023,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2023,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2023,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2023,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-Maybank,2023,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-Maybank,2023,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-Maybank,2023,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2023,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-Maybank,2023,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2023,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-Maybank,2023,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2023,FTOI,internet banking,4,3.958749826804695e-05,OK,FTOI__internet banking
-Maybank,2023,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2023,FTOI,mobile banking,10,9.896874567011737e-05,OK,FTOI__mobile banking
-Maybank,2023,FTOI,mobile payment,0,0.0,OK,FTOI__mobile payment
-Maybank,2023,FTOI,online banking,5,4.9484372835058687e-05,OK,FTOI__online banking
-Maybank,2023,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2023,FTOI,online loan,0,0.0,OK,FTOI__online loan
-Maybank,2023,FTOI,online payment,0,0.0,OK,FTOI__online payment
-Maybank,2023,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-Maybank,2023,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
-Maybank,2024,FTII,ai,30,0.00030477893368010406,OK,FTII__ai
-Maybank,2024,FTII,alliance chain,0,0.0,OK,FTII__alliance chain
-Maybank,2024,FTII,artificial intelligence,7,7.11150845253576e-05,OK,FTII__artificial intelligence
-Maybank,2024,FTII,asymmetric encryption,0,0.0,OK,FTII__asymmetric encryption
-Maybank,2024,FTII,big data,0,0.0,OK,FTII__big data
-Maybank,2024,FTII,blockchain,0,0.0,OK,FTII__blockchain
-Maybank,2024,FTII,cloud architecture,0,0.0,OK,FTII__cloud architecture
-Maybank,2024,FTII,cloud computing,0,0.0,OK,FTII__cloud computing
-Maybank,2024,FTII,cloud platform,0,0.0,OK,FTII__cloud platform
-Maybank,2024,FTII,cloud service,0,0.0,OK,FTII__cloud service
-Maybank,2024,FTII,data flow,0,0.0,OK,FTII__data flow
-Maybank,2024,FTII,data mining,0,0.0,OK,FTII__data mining
-Maybank,2024,FTII,data visualization,0,0.0,OK,FTII__data visualization
-Maybank,2024,FTII,distributed ledger,0,0.0,OK,FTII__distributed ledger
-Maybank,2024,FTII,face recognition,0,0.0,OK,FTII__face recognition
-Maybank,2024,FTII,fingerprint recognition,0,0.0,OK,FTII__fingerprint recognition
-Maybank,2024,FTII,voice recognition,0,0.0,OK,FTII__voice recognition
-Maybank,2024,FTOI,anti-fraud,0,0.0,OK,FTOI__anti-fraud
-Maybank,2024,FTOI,bank app,0,0.0,OK,FTOI__bank app
-Maybank,2024,FTOI,credit evaluation,0,0.0,OK,FTOI__credit evaluation
-Maybank,2024,FTOI,customer portrait,0,0.0,OK,FTOI__customer portrait
-Maybank,2024,FTOI,digital wallet,0,0.0,OK,FTOI__digital wallet
-Maybank,2024,FTOI,inclusive credit,0,0.0,OK,FTOI__inclusive credit
-Maybank,2024,FTOI,internet banking,4,4.0637191157347205e-05,OK,FTOI__internet banking
-Maybank,2024,FTOI,lending platform,0,0.0,OK,FTOI__lending platform
-Maybank,2024,FTOI,mobile banking,4,4.0637191157347205e-05,OK,FTOI__mobile banking
-Maybank,2024,FTOI,mobile payment,1,1.0159297789336801e-05,OK,FTOI__mobile payment
-Maybank,2024,FTOI,online banking,2,2.0318595578673603e-05,OK,FTOI__online banking
-Maybank,2024,FTOI,online finance,0,0.0,OK,FTOI__online finance
-Maybank,2024,FTOI,online loan,0,0.0,OK,FTOI__online loan
-Maybank,2024,FTOI,online payment,0,0.0,OK,FTOI__online payment
-Maybank,2024,FTOI,predictive model,0,0.0,OK,FTOI__predictive model
-Maybank,2024,FTOI,qr code payment,0,0.0,OK,FTOI__qr code payment
+CIMB,2015,FTII,ai,0,0.0,pypdf,FTII__ai
+CIMB,2015,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2015,FTII,artificial intelligence,0,0.0,pypdf,FTII__artificial intelligence
+CIMB,2015,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2015,FTII,big data,0,0.0,pypdf,FTII__big data
+CIMB,2015,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+CIMB,2015,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2015,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2015,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2015,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2015,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2015,FTII,data mining,1,8.920765758532712e-06,pypdf,FTII__data mining
+CIMB,2015,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2015,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+CIMB,2015,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2015,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2015,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2015,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2015,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2015,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2015,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2015,FTOI,digital wallet,2,1.7841531517065425e-05,pypdf,FTOI__digital wallet
+CIMB,2015,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2015,FTOI,internet banking,0,0.0,pypdf,FTOI__internet banking
+CIMB,2015,FTOI,lending platform,1,8.920765758532712e-06,pypdf,FTOI__lending platform
+CIMB,2015,FTOI,mobile banking,8,7.13661260682617e-05,pypdf,FTOI__mobile banking
+CIMB,2015,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+CIMB,2015,FTOI,online banking,3,2.676229727559814e-05,pypdf,FTOI__online banking
+CIMB,2015,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2015,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+CIMB,2015,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+CIMB,2015,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2015,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+CIMB,2016,FTII,ai,0,0.0,pypdf,FTII__ai
+CIMB,2016,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2016,FTII,artificial intelligence,0,0.0,pypdf,FTII__artificial intelligence
+CIMB,2016,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2016,FTII,big data,3,2.393336949931391e-05,pypdf,FTII__big data
+CIMB,2016,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+CIMB,2016,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2016,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2016,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2016,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2016,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2016,FTII,data mining,0,0.0,pypdf,FTII__data mining
+CIMB,2016,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2016,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+CIMB,2016,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2016,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2016,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2016,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2016,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2016,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2016,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2016,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+CIMB,2016,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2016,FTOI,internet banking,3,2.393336949931391e-05,pypdf,FTOI__internet banking
+CIMB,2016,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+CIMB,2016,FTOI,mobile banking,10,7.977789833104637e-05,pypdf,FTOI__mobile banking
+CIMB,2016,FTOI,mobile payment,2,1.5955579666209275e-05,pypdf,FTOI__mobile payment
+CIMB,2016,FTOI,online banking,6,4.786673899862782e-05,pypdf,FTOI__online banking
+CIMB,2016,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2016,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+CIMB,2016,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+CIMB,2016,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2016,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+CIMB,2017,FTII,ai,2,1.8690191387559808e-05,pypdf,FTII__ai
+CIMB,2017,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2017,FTII,artificial intelligence,6,5.607057416267943e-05,pypdf,FTII__artificial intelligence
+CIMB,2017,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2017,FTII,big data,12,0.00011214114832535885,pypdf,FTII__big data
+CIMB,2017,FTII,blockchain,4,3.7380382775119616e-05,pypdf,FTII__blockchain
+CIMB,2017,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2017,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2017,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2017,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2017,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2017,FTII,data mining,0,0.0,pypdf,FTII__data mining
+CIMB,2017,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2017,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+CIMB,2017,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2017,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2017,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2017,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2017,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2017,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2017,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2017,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+CIMB,2017,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2017,FTOI,internet banking,0,0.0,pypdf,FTOI__internet banking
+CIMB,2017,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+CIMB,2017,FTOI,mobile banking,5,4.672547846889952e-05,pypdf,FTOI__mobile banking
+CIMB,2017,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+CIMB,2017,FTOI,online banking,3,2.8035287081339714e-05,pypdf,FTOI__online banking
+CIMB,2017,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2017,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+CIMB,2017,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+CIMB,2017,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2017,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+CIMB,2018,FTII,ai,9,8.78829009169116e-05,pypdf,FTII__ai
+CIMB,2018,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2018,FTII,artificial intelligence,6,5.85886006112744e-05,pypdf,FTII__artificial intelligence
+CIMB,2018,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2018,FTII,big data,5,4.8823833842728667e-05,pypdf,FTII__big data
+CIMB,2018,FTII,blockchain,10,9.764766768545733e-05,pypdf,FTII__blockchain
+CIMB,2018,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2018,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2018,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2018,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2018,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2018,FTII,data mining,1,9.764766768545733e-06,pypdf,FTII__data mining
+CIMB,2018,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2018,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+CIMB,2018,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2018,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2018,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2018,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2018,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2018,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2018,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2018,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+CIMB,2018,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2018,FTOI,internet banking,2,1.9529533537091466e-05,pypdf,FTOI__internet banking
+CIMB,2018,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+CIMB,2018,FTOI,mobile banking,4,3.905906707418293e-05,pypdf,FTOI__mobile banking
+CIMB,2018,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+CIMB,2018,FTOI,online banking,7,6.835336737982013e-05,pypdf,FTOI__online banking
+CIMB,2018,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2018,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+CIMB,2018,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+CIMB,2018,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2018,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+CIMB,2019,FTII,ai,1,1.1679650544855698e-05,pypdf,FTII__ai
+CIMB,2019,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2019,FTII,artificial intelligence,1,1.1679650544855698e-05,pypdf,FTII__artificial intelligence
+CIMB,2019,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2019,FTII,big data,7,8.175755381398989e-05,pypdf,FTII__big data
+CIMB,2019,FTII,blockchain,7,8.175755381398989e-05,pypdf,FTII__blockchain
+CIMB,2019,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2019,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2019,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2019,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2019,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2019,FTII,data mining,0,0.0,pypdf,FTII__data mining
+CIMB,2019,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2019,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+CIMB,2019,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2019,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2019,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2019,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2019,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2019,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2019,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2019,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+CIMB,2019,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2019,FTOI,internet banking,1,1.1679650544855698e-05,pypdf,FTOI__internet banking
+CIMB,2019,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+CIMB,2019,FTOI,mobile banking,6,7.007790326913419e-05,pypdf,FTOI__mobile banking
+CIMB,2019,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+CIMB,2019,FTOI,online banking,6,7.007790326913419e-05,pypdf,FTOI__online banking
+CIMB,2019,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2019,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+CIMB,2019,FTOI,online payment,1,1.1679650544855698e-05,pypdf,FTOI__online payment
+CIMB,2019,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2019,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+CIMB,2020,FTII,ai,3,3.9389204731956464e-05,pypdf,FTII__ai
+CIMB,2020,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2020,FTII,artificial intelligence,0,0.0,pypdf,FTII__artificial intelligence
+CIMB,2020,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2020,FTII,big data,5,6.564867455326078e-05,pypdf,FTII__big data
+CIMB,2020,FTII,blockchain,1,1.3129734910652154e-05,pypdf,FTII__blockchain
+CIMB,2020,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2020,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2020,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2020,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2020,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2020,FTII,data mining,0,0.0,pypdf,FTII__data mining
+CIMB,2020,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2020,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+CIMB,2020,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2020,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2020,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2020,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2020,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2020,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2020,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2020,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+CIMB,2020,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2020,FTOI,internet banking,0,0.0,pypdf,FTOI__internet banking
+CIMB,2020,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+CIMB,2020,FTOI,mobile banking,4,5.2518939642608616e-05,pypdf,FTOI__mobile banking
+CIMB,2020,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+CIMB,2020,FTOI,online banking,4,5.2518939642608616e-05,pypdf,FTOI__online banking
+CIMB,2020,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2020,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+CIMB,2020,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+CIMB,2020,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2020,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+CIMB,2021,FTII,ai,1,8.493434575073469e-06,pypdf,FTII__ai
+CIMB,2021,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2021,FTII,artificial intelligence,3,2.5480303725220406e-05,pypdf,FTII__artificial intelligence
+CIMB,2021,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2021,FTII,big data,7,5.945404202551428e-05,pypdf,FTII__big data
+CIMB,2021,FTII,blockchain,1,8.493434575073469e-06,pypdf,FTII__blockchain
+CIMB,2021,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2021,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2021,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2021,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2021,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2021,FTII,data mining,0,0.0,pypdf,FTII__data mining
+CIMB,2021,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2021,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+CIMB,2021,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2021,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2021,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2021,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2021,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2021,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2021,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2021,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+CIMB,2021,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2021,FTOI,internet banking,0,0.0,pypdf,FTOI__internet banking
+CIMB,2021,FTOI,lending platform,1,8.493434575073469e-06,pypdf,FTOI__lending platform
+CIMB,2021,FTOI,mobile banking,3,2.5480303725220406e-05,pypdf,FTOI__mobile banking
+CIMB,2021,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+CIMB,2021,FTOI,online banking,8,6.794747660058775e-05,pypdf,FTOI__online banking
+CIMB,2021,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2021,FTOI,online loan,1,8.493434575073469e-06,pypdf,FTOI__online loan
+CIMB,2021,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+CIMB,2021,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2021,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+CIMB,2022,FTII,ai,0,0.0,pypdf,FTII__ai
+CIMB,2022,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2022,FTII,artificial intelligence,5,4.3165591843429765e-05,pypdf,FTII__artificial intelligence
+CIMB,2022,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2022,FTII,big data,4,3.4532473474743815e-05,pypdf,FTII__big data
+CIMB,2022,FTII,blockchain,1,8.633118368685954e-06,pypdf,FTII__blockchain
+CIMB,2022,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2022,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2022,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2022,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2022,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2022,FTII,data mining,0,0.0,pypdf,FTII__data mining
+CIMB,2022,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2022,FTII,distributed ledger,1,8.633118368685954e-06,pypdf,FTII__distributed ledger
+CIMB,2022,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2022,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2022,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2022,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2022,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2022,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2022,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2022,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+CIMB,2022,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2022,FTOI,internet banking,1,8.633118368685954e-06,pypdf,FTOI__internet banking
+CIMB,2022,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+CIMB,2022,FTOI,mobile banking,7,6.043182858080167e-05,pypdf,FTOI__mobile banking
+CIMB,2022,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+CIMB,2022,FTOI,online banking,5,4.3165591843429765e-05,pypdf,FTOI__online banking
+CIMB,2022,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2022,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+CIMB,2022,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+CIMB,2022,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2022,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+CIMB,2023,FTII,ai,2,1.721170395869191e-05,pypdf,FTII__ai
+CIMB,2023,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2023,FTII,artificial intelligence,2,1.721170395869191e-05,pypdf,FTII__artificial intelligence
+CIMB,2023,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2023,FTII,big data,0,0.0,pypdf,FTII__big data
+CIMB,2023,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+CIMB,2023,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2023,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2023,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2023,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2023,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2023,FTII,data mining,0,0.0,pypdf,FTII__data mining
+CIMB,2023,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2023,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+CIMB,2023,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2023,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2023,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2023,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2023,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2023,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2023,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2023,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+CIMB,2023,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2023,FTOI,internet banking,0,0.0,pypdf,FTOI__internet banking
+CIMB,2023,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+CIMB,2023,FTOI,mobile banking,4,3.442340791738382e-05,pypdf,FTOI__mobile banking
+CIMB,2023,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+CIMB,2023,FTOI,online banking,5,4.302925989672978e-05,pypdf,FTOI__online banking
+CIMB,2023,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2023,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+CIMB,2023,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+CIMB,2023,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2023,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+CIMB,2024,FTII,ai,17,0.00013500849759367207,pypdf,FTII__ai
+CIMB,2024,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+CIMB,2024,FTII,artificial intelligence,8,6.353341063231627e-05,pypdf,FTII__artificial intelligence
+CIMB,2024,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+CIMB,2024,FTII,big data,2,1.5883352658079067e-05,pypdf,FTII__big data
+CIMB,2024,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+CIMB,2024,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+CIMB,2024,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+CIMB,2024,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+CIMB,2024,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+CIMB,2024,FTII,data flow,0,0.0,pypdf,FTII__data flow
+CIMB,2024,FTII,data mining,0,0.0,pypdf,FTII__data mining
+CIMB,2024,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+CIMB,2024,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+CIMB,2024,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+CIMB,2024,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+CIMB,2024,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+CIMB,2024,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+CIMB,2024,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+CIMB,2024,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+CIMB,2024,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+CIMB,2024,FTOI,digital wallet,1,7.941676329039533e-06,pypdf,FTOI__digital wallet
+CIMB,2024,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+CIMB,2024,FTOI,internet banking,0,0.0,pypdf,FTOI__internet banking
+CIMB,2024,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+CIMB,2024,FTOI,mobile banking,2,1.5883352658079067e-05,pypdf,FTOI__mobile banking
+CIMB,2024,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+CIMB,2024,FTOI,online banking,5,3.970838164519767e-05,pypdf,FTOI__online banking
+CIMB,2024,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+CIMB,2024,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+CIMB,2024,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+CIMB,2024,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+CIMB,2024,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2015,FTII,ai,2,1.629819171562915e-05,pypdf,FTII__ai
+Maybank,2015,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2015,FTII,artificial intelligence,0,0.0,pypdf,FTII__artificial intelligence
+Maybank,2015,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2015,FTII,big data,0,0.0,pypdf,FTII__big data
+Maybank,2015,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+Maybank,2015,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2015,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2015,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2015,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2015,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2015,FTII,data mining,0,0.0,pypdf,FTII__data mining
+Maybank,2015,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2015,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2015,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2015,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+Maybank,2015,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+Maybank,2015,FTOI,anti-fraud,4,3.25963834312583e-05,pypdf,FTOI__anti-fraud
+Maybank,2015,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2015,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+Maybank,2015,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2015,FTOI,digital wallet,1,8.149095857814575e-06,pypdf,FTOI__digital wallet
+Maybank,2015,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2015,FTOI,internet banking,17,0.0001385346295828478,pypdf,FTOI__internet banking
+Maybank,2015,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2015,FTOI,mobile banking,23,0.00018742920472973522,pypdf,FTOI__mobile banking
+Maybank,2015,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+Maybank,2015,FTOI,online banking,0,0.0,pypdf,FTOI__online banking
+Maybank,2015,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2015,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+Maybank,2015,FTOI,online payment,3,2.4447287573443728e-05,pypdf,FTOI__online payment
+Maybank,2015,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+Maybank,2015,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2016,FTII,ai,0,0.0,pypdf,FTII__ai
+Maybank,2016,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2016,FTII,artificial intelligence,0,0.0,pypdf,FTII__artificial intelligence
+Maybank,2016,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2016,FTII,big data,0,0.0,pypdf,FTII__big data
+Maybank,2016,FTII,blockchain,1,8.000640051204096e-06,pypdf,FTII__blockchain
+Maybank,2016,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2016,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2016,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2016,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2016,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2016,FTII,data mining,0,0.0,pypdf,FTII__data mining
+Maybank,2016,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2016,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2016,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2016,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+Maybank,2016,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+Maybank,2016,FTOI,anti-fraud,3,2.4001920153612287e-05,pypdf,FTOI__anti-fraud
+Maybank,2016,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2016,FTOI,credit evaluation,1,8.000640051204096e-06,pypdf,FTOI__credit evaluation
+Maybank,2016,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2016,FTOI,digital wallet,3,2.4001920153612287e-05,pypdf,FTOI__digital wallet
+Maybank,2016,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2016,FTOI,internet banking,14,0.00011200896071685735,pypdf,FTOI__internet banking
+Maybank,2016,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2016,FTOI,mobile banking,22,0.00017601408112649013,pypdf,FTOI__mobile banking
+Maybank,2016,FTOI,mobile payment,4,3.200256020481638e-05,pypdf,FTOI__mobile payment
+Maybank,2016,FTOI,online banking,2,1.600128010240819e-05,pypdf,FTOI__online banking
+Maybank,2016,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2016,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+Maybank,2016,FTOI,online payment,2,1.600128010240819e-05,pypdf,FTOI__online payment
+Maybank,2016,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+Maybank,2016,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2017,FTII,ai,0,0.0,pypdf,FTII__ai
+Maybank,2017,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2017,FTII,artificial intelligence,1,1.0688671077524932e-05,pypdf,FTII__artificial intelligence
+Maybank,2017,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2017,FTII,big data,1,1.0688671077524932e-05,pypdf,FTII__big data
+Maybank,2017,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+Maybank,2017,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2017,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2017,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2017,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2017,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2017,FTII,data mining,0,0.0,pypdf,FTII__data mining
+Maybank,2017,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2017,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2017,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2017,FTII,fingerprint recognition,3,3.206601323257479e-05,pypdf,FTII__fingerprint recognition
+Maybank,2017,FTII,voice recognition,4,4.2754684310099726e-05,pypdf,FTII__voice recognition
+Maybank,2017,FTOI,anti-fraud,2,2.1377342155049863e-05,pypdf,FTOI__anti-fraud
+Maybank,2017,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2017,FTOI,credit evaluation,1,1.0688671077524932e-05,pypdf,FTOI__credit evaluation
+Maybank,2017,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2017,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+Maybank,2017,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2017,FTOI,internet banking,3,3.206601323257479e-05,pypdf,FTOI__internet banking
+Maybank,2017,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2017,FTOI,mobile banking,10,0.00010688671077524932,pypdf,FTOI__mobile banking
+Maybank,2017,FTOI,mobile payment,5,5.344335538762466e-05,pypdf,FTOI__mobile payment
+Maybank,2017,FTOI,online banking,2,2.1377342155049863e-05,pypdf,FTOI__online banking
+Maybank,2017,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2017,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+Maybank,2017,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+Maybank,2017,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+Maybank,2017,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2018,FTII,ai,0,0.0,pypdf,FTII__ai
+Maybank,2018,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2018,FTII,artificial intelligence,4,4.656414793429799e-05,pypdf,FTII__artificial intelligence
+Maybank,2018,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2018,FTII,big data,1,1.1641036983574497e-05,pypdf,FTII__big data
+Maybank,2018,FTII,blockchain,1,1.1641036983574497e-05,pypdf,FTII__blockchain
+Maybank,2018,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2018,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2018,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2018,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2018,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2018,FTII,data mining,1,1.1641036983574497e-05,pypdf,FTII__data mining
+Maybank,2018,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2018,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2018,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2018,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+Maybank,2018,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+Maybank,2018,FTOI,anti-fraud,2,2.3282073967148993e-05,pypdf,FTOI__anti-fraud
+Maybank,2018,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2018,FTOI,credit evaluation,1,1.1641036983574497e-05,pypdf,FTOI__credit evaluation
+Maybank,2018,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2018,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+Maybank,2018,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2018,FTOI,internet banking,0,0.0,pypdf,FTOI__internet banking
+Maybank,2018,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2018,FTOI,mobile banking,4,4.656414793429799e-05,pypdf,FTOI__mobile banking
+Maybank,2018,FTOI,mobile payment,2,2.3282073967148993e-05,pypdf,FTOI__mobile payment
+Maybank,2018,FTOI,online banking,6,6.984622190144699e-05,pypdf,FTOI__online banking
+Maybank,2018,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2018,FTOI,online loan,1,1.1641036983574497e-05,pypdf,FTOI__online loan
+Maybank,2018,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+Maybank,2018,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+Maybank,2018,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2019,FTII,ai,6,7.938608097380259e-05,pypdf,FTII__ai
+Maybank,2019,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2019,FTII,artificial intelligence,4,5.292405398253506e-05,pypdf,FTII__artificial intelligence
+Maybank,2019,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2019,FTII,big data,0,0.0,pypdf,FTII__big data
+Maybank,2019,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+Maybank,2019,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2019,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2019,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2019,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2019,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2019,FTII,data mining,0,0.0,pypdf,FTII__data mining
+Maybank,2019,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2019,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2019,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2019,FTII,fingerprint recognition,1,1.3231013495633765e-05,pypdf,FTII__fingerprint recognition
+Maybank,2019,FTII,voice recognition,1,1.3231013495633765e-05,pypdf,FTII__voice recognition
+Maybank,2019,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+Maybank,2019,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2019,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+Maybank,2019,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2019,FTOI,digital wallet,3,3.9693040486901295e-05,pypdf,FTOI__digital wallet
+Maybank,2019,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2019,FTOI,internet banking,2,2.646202699126753e-05,pypdf,FTOI__internet banking
+Maybank,2019,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2019,FTOI,mobile banking,7,9.261709446943635e-05,pypdf,FTOI__mobile banking
+Maybank,2019,FTOI,mobile payment,1,1.3231013495633765e-05,pypdf,FTOI__mobile payment
+Maybank,2019,FTOI,online banking,5,6.615506747816882e-05,pypdf,FTOI__online banking
+Maybank,2019,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2019,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+Maybank,2019,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+Maybank,2019,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+Maybank,2019,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2020,FTII,ai,4,5.1680254266850996e-05,pypdf,FTII__ai
+Maybank,2020,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2020,FTII,artificial intelligence,4,5.1680254266850996e-05,pypdf,FTII__artificial intelligence
+Maybank,2020,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2020,FTII,big data,0,0.0,pypdf,FTII__big data
+Maybank,2020,FTII,blockchain,1,1.2920063566712749e-05,pypdf,FTII__blockchain
+Maybank,2020,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2020,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2020,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2020,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2020,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2020,FTII,data mining,0,0.0,pypdf,FTII__data mining
+Maybank,2020,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2020,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2020,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2020,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+Maybank,2020,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+Maybank,2020,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+Maybank,2020,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2020,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+Maybank,2020,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2020,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+Maybank,2020,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2020,FTOI,internet banking,1,1.2920063566712749e-05,pypdf,FTOI__internet banking
+Maybank,2020,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2020,FTOI,mobile banking,4,5.1680254266850996e-05,pypdf,FTOI__mobile banking
+Maybank,2020,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+Maybank,2020,FTOI,online banking,2,2.5840127133425498e-05,pypdf,FTOI__online banking
+Maybank,2020,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2020,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+Maybank,2020,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+Maybank,2020,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+Maybank,2020,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2021,FTII,ai,0,0.0,pypdf,FTII__ai
+Maybank,2021,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2021,FTII,artificial intelligence,1,1.2418657791465898e-05,pypdf,FTII__artificial intelligence
+Maybank,2021,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2021,FTII,big data,0,0.0,pypdf,FTII__big data
+Maybank,2021,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+Maybank,2021,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2021,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2021,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2021,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2021,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2021,FTII,data mining,0,0.0,pypdf,FTII__data mining
+Maybank,2021,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2021,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2021,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2021,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+Maybank,2021,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+Maybank,2021,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+Maybank,2021,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2021,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+Maybank,2021,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2021,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+Maybank,2021,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2021,FTOI,internet banking,5,6.209328895732949e-05,pypdf,FTOI__internet banking
+Maybank,2021,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2021,FTOI,mobile banking,5,6.209328895732949e-05,pypdf,FTOI__mobile banking
+Maybank,2021,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+Maybank,2021,FTOI,online banking,1,1.2418657791465898e-05,pypdf,FTOI__online banking
+Maybank,2021,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2021,FTOI,online loan,1,1.2418657791465898e-05,pypdf,FTOI__online loan
+Maybank,2021,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+Maybank,2021,FTOI,predictive model,2,2.4837315582931796e-05,pypdf,FTOI__predictive model
+Maybank,2021,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2022,FTII,ai,4,4.56141951375268e-05,pypdf,FTII__ai
+Maybank,2022,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2022,FTII,artificial intelligence,4,4.56141951375268e-05,pypdf,FTII__artificial intelligence
+Maybank,2022,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2022,FTII,big data,1,1.14035487843817e-05,pypdf,FTII__big data
+Maybank,2022,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+Maybank,2022,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2022,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2022,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2022,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2022,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2022,FTII,data mining,0,0.0,pypdf,FTII__data mining
+Maybank,2022,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2022,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2022,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2022,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+Maybank,2022,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+Maybank,2022,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+Maybank,2022,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2022,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+Maybank,2022,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2022,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+Maybank,2022,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2022,FTOI,internet banking,6,6.84212927062902e-05,pypdf,FTOI__internet banking
+Maybank,2022,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2022,FTOI,mobile banking,8,9.12283902750536e-05,pypdf,FTOI__mobile banking
+Maybank,2022,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+Maybank,2022,FTOI,online banking,5,5.70177439219085e-05,pypdf,FTOI__online banking
+Maybank,2022,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2022,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+Maybank,2022,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+Maybank,2022,FTOI,predictive model,1,1.14035487843817e-05,pypdf,FTOI__predictive model
+Maybank,2022,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2023,FTII,ai,20,0.00019793749134023475,pypdf,FTII__ai
+Maybank,2023,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2023,FTII,artificial intelligence,4,3.958749826804695e-05,pypdf,FTII__artificial intelligence
+Maybank,2023,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2023,FTII,big data,1,9.896874567011738e-06,pypdf,FTII__big data
+Maybank,2023,FTII,blockchain,1,9.896874567011738e-06,pypdf,FTII__blockchain
+Maybank,2023,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2023,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2023,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2023,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2023,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2023,FTII,data mining,0,0.0,pypdf,FTII__data mining
+Maybank,2023,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2023,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2023,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2023,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+Maybank,2023,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+Maybank,2023,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+Maybank,2023,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2023,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+Maybank,2023,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2023,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+Maybank,2023,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2023,FTOI,internet banking,4,3.958749826804695e-05,pypdf,FTOI__internet banking
+Maybank,2023,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2023,FTOI,mobile banking,10,9.896874567011737e-05,pypdf,FTOI__mobile banking
+Maybank,2023,FTOI,mobile payment,0,0.0,pypdf,FTOI__mobile payment
+Maybank,2023,FTOI,online banking,5,4.9484372835058687e-05,pypdf,FTOI__online banking
+Maybank,2023,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2023,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+Maybank,2023,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+Maybank,2023,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+Maybank,2023,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
+Maybank,2024,FTII,ai,30,0.00030477893368010406,pypdf,FTII__ai
+Maybank,2024,FTII,alliance chain,0,0.0,pypdf,FTII__alliance chain
+Maybank,2024,FTII,artificial intelligence,7,7.11150845253576e-05,pypdf,FTII__artificial intelligence
+Maybank,2024,FTII,asymmetric encryption,0,0.0,pypdf,FTII__asymmetric encryption
+Maybank,2024,FTII,big data,0,0.0,pypdf,FTII__big data
+Maybank,2024,FTII,blockchain,0,0.0,pypdf,FTII__blockchain
+Maybank,2024,FTII,cloud architecture,0,0.0,pypdf,FTII__cloud architecture
+Maybank,2024,FTII,cloud computing,0,0.0,pypdf,FTII__cloud computing
+Maybank,2024,FTII,cloud platform,0,0.0,pypdf,FTII__cloud platform
+Maybank,2024,FTII,cloud service,0,0.0,pypdf,FTII__cloud service
+Maybank,2024,FTII,data flow,0,0.0,pypdf,FTII__data flow
+Maybank,2024,FTII,data mining,0,0.0,pypdf,FTII__data mining
+Maybank,2024,FTII,data visualization,0,0.0,pypdf,FTII__data visualization
+Maybank,2024,FTII,distributed ledger,0,0.0,pypdf,FTII__distributed ledger
+Maybank,2024,FTII,face recognition,0,0.0,pypdf,FTII__face recognition
+Maybank,2024,FTII,fingerprint recognition,0,0.0,pypdf,FTII__fingerprint recognition
+Maybank,2024,FTII,voice recognition,0,0.0,pypdf,FTII__voice recognition
+Maybank,2024,FTOI,anti-fraud,0,0.0,pypdf,FTOI__anti-fraud
+Maybank,2024,FTOI,bank app,0,0.0,pypdf,FTOI__bank app
+Maybank,2024,FTOI,credit evaluation,0,0.0,pypdf,FTOI__credit evaluation
+Maybank,2024,FTOI,customer portrait,0,0.0,pypdf,FTOI__customer portrait
+Maybank,2024,FTOI,digital wallet,0,0.0,pypdf,FTOI__digital wallet
+Maybank,2024,FTOI,inclusive credit,0,0.0,pypdf,FTOI__inclusive credit
+Maybank,2024,FTOI,internet banking,4,4.0637191157347205e-05,pypdf,FTOI__internet banking
+Maybank,2024,FTOI,lending platform,0,0.0,pypdf,FTOI__lending platform
+Maybank,2024,FTOI,mobile banking,4,4.0637191157347205e-05,pypdf,FTOI__mobile banking
+Maybank,2024,FTOI,mobile payment,1,1.0159297789336801e-05,pypdf,FTOI__mobile payment
+Maybank,2024,FTOI,online banking,2,2.0318595578673603e-05,pypdf,FTOI__online banking
+Maybank,2024,FTOI,online finance,0,0.0,pypdf,FTOI__online finance
+Maybank,2024,FTOI,online loan,0,0.0,pypdf,FTOI__online loan
+Maybank,2024,FTOI,online payment,0,0.0,pypdf,FTOI__online payment
+Maybank,2024,FTOI,predictive model,0,0.0,pypdf,FTOI__predictive model
+Maybank,2024,FTOI,qr code payment,0,0.0,pypdf,FTOI__qr code payment
