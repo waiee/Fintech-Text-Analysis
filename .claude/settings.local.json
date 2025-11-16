@@ -3,7 +3,10 @@
     "allow": [
       "Bash(python:*)",
       "Bash(cat:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git rm:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nRemove venv from git tracking and update .gitignore\n\n- Removed all venv/ files from git tracking using git rm -r --cached\n- Enhanced .gitignore to include Python cache files, build artifacts, and IDE files\n- Prevents future tracking of virtual environment and generated files\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
